@@ -20,8 +20,8 @@ SamplePopID,populationName,samplesize,geographicRegion,dataSet.of.origin,lat,lon
 58,Pathan,24,CENTRAL_SOUTH_ASIA,HGDP-CEPH,33.487,70.5,Pakistan,Pashto,pash1269,ok,ok
 59,Sindhi,25,CENTRAL_SOUTH_ASIA,HGDP-CEPH,25.4906,69,Pakistan,Sindhi,sind1272,automatically assigned by Robert F,ok
 81,Piapoco,13,AMERICA,HGDP-CEPH,3,-68,Colombia,Piapoco,piap1246,automatically assigned by Robert F,ok
-82,Karitiana,24,AMERICA,HGDP-CEPH,-10,-63,Brazil,Kariti•À_na,kari1311,automatically assigned by Robert F,ok
-83,Surui,21,AMERICA,HGDP-CEPH,-11,-62,Brazil,Suru•À_,suru1262,ok,ok
+82,Karitiana,24,AMERICA,HGDP-CEPH,-10,-63,Brazil,Karitiâ€¢Ã€_na,kari1311,automatically assigned by Robert F,ok
+83,Surui,21,AMERICA,HGDP-CEPH,-11,-62,Brazil,Suruâ€¢Ã€_,suru1262,ok,ok
 86,Maya,25,AMERICA,HGDP-CEPH,19,-91,Mexico,Yucatec Maya,yuca1254,ok,ok
 87,Pima,25,AMERICA,HGDP-CEPH,29,-108,Mexico,Pima Bajo,pima1248,automatically assigned by Robert F,ok
 464,Mandenka,24,AFRICA,HGDP-CEPH,12,-12,Senegal,Mandinka,mand1436,ok,ok
@@ -46,7 +46,7 @@ SamplePopID,populationName,samplesize,geographicRegion,dataSet.of.origin,lat,lon
 516,Telugu,27,CENTRAL_SOUTH_ASIA,AsianIndian,15.9258,79.6296,India,Telugu,telu1262,automatically assigned by Robert F,ok
 601,Han,34,EAST_ASIA,HGDP-CEPH,32.2657,114,China,Mandarin Chinese,mand1415,correct by Harald,ok
 602,Han-NChina,10,EAST_ASIA,HGDP-CEPH,32.2657,114,China,Mandarin Chinese,mand1415,ok,ok
-606,Dai,10,EAST_ASIA,HGDP-CEPH,21,100,China,L•À_,luuu1242,correct by Harald - checked by Chiara,ok
+606,Dai,10,EAST_ASIA,HGDP-CEPH,21,100,China,Lâ€¢Ã€_,luuu1242,correct by Harald - checked by Chiara,ok
 607,Daur,10,EAST_ASIA,HGDP-CEPH,48.4975,124,China,Dagur,daur1238,automatically assigned by Robert F,ok
 608,Hezhen,9,EAST_ASIA,HGDP-CEPH,47.4976,133.5,China,Kilen,kile1243,correct by Harald,ok
 611,Lahu,10,EAST_ASIA,HGDP-CEPH,22,100,China,Lahu,lahu1253,automatically assigned by Robert F,ok
@@ -71,12 +71,12 @@ SamplePopID,populationName,samplesize,geographicRegion,dataSet.of.origin,lat,lon
 822,Mixtec,19,AMERICA,NativeAmerican,17,-97,Mexico,NA,NA,exclude,exclude
 823,Mixe,20,AMERICA,NativeAmerican,17,-96,Mexico,NA,NA,exclude,exclude
 824,Zapotec,17,AMERICA,NativeAmerican,16,-97,Mexico,Zapotec,zapo1437,no better info,ok
-831,Guaymi,16,AMERICA,NativeAmerican,8.5,-82,Panama,Ng•À_bere,ngab1239,automatically assigned by Robert F,ok
-832,Cabecar,20,AMERICA,NativeAmerican,9.5,-84,CostaRica,Cab•À_car,cabe1245,automatically assigned by Robert F,ok
+831,Guaymi,16,AMERICA,NativeAmerican,8.5,-82,Panama,Ngâ€¢Ã€_bere,ngab1239,automatically assigned by Robert F,ok
+832,Cabecar,20,AMERICA,NativeAmerican,9.5,-84,CostaRica,Cabâ€¢Ã€_car,cabe1245,automatically assigned by Robert F,ok
 833,Aymara,18,AMERICA,NativeAmerican,-22,-70,Chile,Southern Aymara,sout2996,Correct by Harald,ok
 834,Huilliche,19,AMERICA,NativeAmerican,-41,-73,Chile,Huilliche,huil1244,automatically assigned by Robert F,ok
-835,Guarani,10,AMERICA,NativeAmerican,-23,-54,Brazil,Mby•À_ Guaran•À_,mbya1239,correct by Harald,ok
-836,Ache,17,AMERICA,NativeAmerican,-24,-56,Paraguay,Ach•À_,ache1246,Correct by Harald,ok
+835,Guarani,10,AMERICA,NativeAmerican,-23,-54,Brazil,Mbyâ€¢Ã€_ Guaranâ€¢Ã€_,mbya1239,correct by Harald,ok
+836,Ache,17,AMERICA,NativeAmerican,-24,-56,Paraguay,Achâ€¢Ã€_,ache1246,Correct by Harald,ok
 837,Kaingang,5,AMERICA,NativeAmerican,-24,-52.5,Brazil,Kaingang,kain1272,automatically assigned by Robert F,ok
 838,Quechua,20,AMERICA,NativeAmerican,-14,-74,Peru,Quechua IIC,quec1389,ok,ok
 841,Kogi,16,AMERICA,NativeAmerican,11,-74,Colombia,Cogui,cogu1240,automatically assigned by Robert F,ok
@@ -226,7 +226,7 @@ SamplePopID,populationName,samplesize,geographicRegion,dataSet.of.origin,lat,lon
 1236,Sabaot,20,AFRICA,African,1,34.8,Kenya,Sabaot,saba1262,automatically assigned by Robert F,ok
 1237,Rendille,28,AFRICA,African,2.3,37.5,Kenya,Rendille,rend1243,automatically assigned by Robert F,ok
 1238,Turkana,26,AFRICA,African,3,36,Kenya,Turkana,turk1308,automatically assigned by Robert F,ok
-1239,Pokot,23,AFRICA,African,1.5,35.5,Kenya,P•À_koot,poko1263,automatically assigned by Robert F,ok
+1239,Pokot,23,AFRICA,African,1.5,35.5,Kenya,Pâ€¢Ã€_koot,poko1263,automatically assigned by Robert F,ok
 1240,Borana,32,AFRICA,African,3,38,Kenya,Borana,bora1272,automatically assigned by Robert F,ok
 1242,Konso,14,AFRICA,African,5.5,37.5,Ethiopia,Konso,kons1243,automatically assigned by Robert F,ok
 1243,Laka,33,AFRICA,African,8,16,Chad,Laka (Chad),laka1254,correct by Harald,ok
@@ -240,7 +240,7 @@ SamplePopID,populationName,samplesize,geographicRegion,dataSet.of.origin,lat,lon
 1252,Gbaya,15,AFRICA,African,5,15,CentralAfricanRepublic,Gbaya-Manza-Ngbaka,gbay1279,correct by Harald,ok
 1253,FulaniMbororo,13,AFRICA,African,11.8,14.8,Cameroon,Adamawa Fulfulde,adam1253,ok,ok
 1254,Wimbum,14,AFRICA,African,6.5,10.8,Cameroon,Limbum,limb1268,automatically assigned by Robert F,ok
-1255,Batie,16,AFRICA,African,4.3,11,Cameroon,Ghom•À_l•À_',ghom1247,automatically assigned by Robert F,ok
+1255,Batie,16,AFRICA,African,4.3,11,Cameroon,Ghomâ€¢Ã€_lâ€¢Ã€_',ghom1247,automatically assigned by Robert F,ok
 1256,Hausa-Cameroon,27,AFRICA,African,10.5,14.5,Cameroon,Hausa,haus1257,maybe,ok
 1257,Kongo,17,AFRICA,African,-5.5,15,DemocraticRepublicCongo,Koongo,koon1244,automatically assigned by Robert F,ok
 1258,Barega,4,AFRICA,African,-3.5,28,DemocraticRepublicCongo,Lega-Mwenga,lega1250,ok,ok
