@@ -23,3 +23,6 @@ Each dataset is independent, and organized in separate folders.
         
     data.csv: The calculated genetic values - i.e. summary statistics. must contain columns
         ExpectedHeterozygosity: Expected heterozygosity (Hs), equivalent to Nei’s genetic diversity [D]
+        
+    popDistance.csv: the matrix of genetic distance between populations calculated with the function Dist.genpop (Nei 1972) [link](https://www.rdocumentation.org/packages/adegenet/versions/2.0.1/topics/dist.genpop)
+    
