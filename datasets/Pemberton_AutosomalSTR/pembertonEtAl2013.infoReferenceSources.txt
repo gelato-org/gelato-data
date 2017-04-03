@@ -1,0 +1,83 @@
+These files describe the exact data used for the paper "Population Structure in a
+Comprehensive Genomic Data Set on Human Microsatellite Variation" by TJ Pemberton,
+M DeGiorgio, NA Rosenberg (G3:Genes|Genomes|Genetics 3:903-919 [2013]).  These
+data are a combination of the data reported by the following studies:
+
+"Genetic structure of human populations" BY NA Rosenberg, JK Pritchard,
+JL Weber, HM Cann, KK Kidd, LA Zhivotovsky, MW Feldman (Science 298:2381
+-2385 [2002]).
+
+"Clines, clusters, and the effect of study design on the inference of human
+population structure" by NA Rosenberg, S Mahajan, S Ramachandran, C Zhao,
+JK Pritchard, MW Feldman (PLoS Genetics 1:660-671 [2005]).
+
+"Support from the relationship of genetic and geographic distance in human
+populations for a serial founder effect originating in Africa" by S
+Ramachandran, O Deshpande, CC Roseman, NA Rosenberg, MW Feldman, LL 
+Cavalli-Sforza (Proceedings of the National Academy of Sciences USA 102:
+15942-15947 [2005]).
+
+"Genetic variation and population structure in Native Americans" by S Wang*,
+CM Lewis Jr*, M Jakobsson*, S Ramachandran, N Ray, G Bedoya, W Rojas, MV Parra,
+JA Molina, C Gallo, G Mazzotti, G Poletti, K Hill, AM Hurtado, D Labuda, W
+Klitz, R Barrantes, MC Bortolini, FM Salzano, ML Petzl-Erler, LT Tsuneto, E
+Llop, F Rothhammer, L Excoffier, MW Feldman, NA Rosenberg, A Ruiz-Linares
+(PLoS Genetics 3:2049-2067 [2007]).
+
+"Geographic patterns of genome admixture in Latin American Mestizos" by S Wang,
+N Ray, W Rojas, MV Parra, G Bedoya, C Gallo, G Poletti, G Mazzotti, K Hill, AM
+Hurtado, B Camrena, H Nicolini, W Klitz, R Barrantes, JA Molina, NB Freimer11,
+M Cátira Bortolini, FM Salzano, ML Petzl-Erler, LT Tsuneto, JE Dipierri, EL
+Alfaro, G Bailliet, NO Bianchi, E Llop, F Rothhammer, L Excoffier, A 
+Ruiz-Linares (PLoS Genetics 4:e1000037 [2008]).
+
+"Genomic microsatellites identify shared Jewish ancestry intermediate between
+Middle Eastern and European populations" by NM Kopelman, L Stone, C Wang, D 
+Gefel, MW Feldman, J Hillel, NA Rosenberg (BMC Genetics 10:80 [2009]).
+
+"Low levels of genetic divergence across geographically and linguistically
+diverse populations from India" by NA Rosenberg, S Mahajan, C Gonzalez-Quevedo,
+MGB Blum, L Nino-Rosales, V Ninis, P Das, M Hegde, L Molinari, G Zapata, JL
+Weber, JW Belmont, PI Patel (PLoS Genetics 2:2052-2061 [2006]).
+
+"Impact of restrictied marital practices on genetic variation in an endogamous
+Gujarati Group" by TJ Pemberton, F-Y Li, Ek Hanson, NU Mehta, S Choi, J
+Ballantyne, JW Belmont, NA Rosenberg, C Tyler-Smith, PI Patel (American Journal
+of Physical Anthropology 149:92-103 [2012]).
+
+"The genetic structure of Pacific Islanders" by JS Friedlaender, FR
+Friedlaender, FA Reed, KK Kidd, JR Kidd, GK Chambers, RA Lea, JH Loo, G Koki,
+JA Hodgson, DA Merriwether, JL Weber (PLoS Genetics 4:e19 [2008]).
+
+"The genetic structure and history of Africans and African Americans" by SA
+Tishkoff, FA Reed, FR Friedlaender, C Ehret, A Ranciaro, A Froment, JB Hirbo,
+AA Awomoyi, JM Bodo, O Doumbo, M Ibrahim, AT Juma, MJ Kotze, G Lema, JH Moore,
+H Mortensen, TB Nyambo, SA Omar, K Powell, GS Pretorius, MW Smith, MA Thera,
+C Wambebe, JL Weber, SM Williams (Science 324:1035-1044 [2009]).
+
+"Genetic structure of chimpanzee populations" by S Becquet, N Patterson, AC
+Stone, M Przeworski, D Reich (PLoS Genetics 3:e66 [2007]).
+
+
+*Version 1.1 of the package of files - created by TJP, June 12, 2013
+
+
+The Rosenberg et al. (2002) study of 1056 individuals from the HGDP-CEPH panel was the first study to utilize a Marshfield Screening Set for population genetics, genotyping 377 autosomal microsatellites in Marshfield Screening Set 10. These data were later augmented by 406 additional loci from Marshfield Screening Sets 13 and 52, producing, after small changes to the set of individuals, a collection of 1048 individuals at 783 loci (Ramachandran et al. 2005; Rosenberg et al. 2005). Several studies then used overlapping marker collections to perform similar investigations in other populations. Three studies concurrently genotyped their samples for 751 autosomal microsatellites in Marshfield Screening Sets 16 and 54: Wang et al. (2007) studied 436 individuals from 24 Native American populations and one Siberian population (Native American data set henceforth), Wang et al. (2008) studied 249 individuals from 13 Latin American Mestizo populations (Latino data set), and Kopelman et al. (2009) studied 80 individuals from four Jewish populations (Jewish data set). In the Native American study, all three data sets were merged with the HGDP-CEPH data (Ramachandran et al. 2005; Rosenberg et al. 2005), only considering markers shared among data sets and adjusting for allele-size differences introduced by primer changes, so that alleles in the newer genotypes matched those in the HGDP-CEPH data set (Wang et al. 2007). We used the combined HGDP-CEPH, Native American, Latino, and Jewish data set of 1813 individuals and 678 loci as the starting point for producing our combined data set (Figure 1).
+
+Asian Indians:
+
+Rosenberg et al. (2006) studied 432 individuals from 15 Asian Indian populations (Asian Indian data set), and Pemberton et al. (2012) studied an overlapping set of 249 individuals from the Gujarati population, one of the populations of Rosenberg et al. (Chha Gaam Patel or CGP data set). The two studies performed genotyping and data preparation concurrently for 729 autosomal microsatellites in Marshfield Screening Sets 13 and 52. We merged the 634 distinct individuals from the Asian Indian and CGP data sets with the combined HGDP-CEPH, Native American, Latino, and Jewish data set at the 665 loci that these data sets shared in common (Figure 1). Rosenberg et al. had previously adjusted the genotypes in the Asian Indian and CGP data to match the HGDP-CEPH data set (Rosenberg et al. 2006); consequently, the adjusted Asian Indian and CGP data sets could simply be concatenated with the combined HGDP-CEPH, Native American, Latino, and Jewish data set, without any need for additional genotypic adjustments.
+
+Pacific Islanders:
+
+Friedlaender et al. (2008) studied 936 individuals from 38 Pacific Islander and two Taiwanese populations using 751 autosomal microsatellites in Marshfield Screening Sets 16 and 54 (Pacific Islander data set). We merged these data with the combined HGDP-CEPH, Native American, Latino, Jewish, Asian Indian and CGP data set at the 664 loci shared by the Pacific Islander data set (Figure 1). We found that two loci in the Pacific Islander data set (ATA27A06N and ATA27A06P) genotyped the same locus using different primer pairs, with ATA27A06P having genotypes 7 nucleotides (nt) longer than those of ATA27A06N. We chose ATA27A06P at random for inclusion in the combined data set. To ensure that each individual and each population had a unique identifier in the combined data set, we added 1000 and 2000, respectively, to population and individual identifiers in the Pacific Islander data set.
+
+Africans:
+
+Tishkoff et al. (2009) studied genotypes of 2561 individuals from 112 African populations, five populations with admixed African and European ancestry (henceforth Afro-Europeans), one Native Australian population, and one Yemenite population at 848 microsatellites in Marshfield Screening Sets 16 and 54 (African data set). We merged these data with the combined HGDP-CEPH, Native American, Latino, Jewish, Asian Indian, CGP, and Pacific Islander data set at the 659 loci that the African data set shared. To ensure that each individual and each population had a unique identifier in the combined data set, we added 1100 and 70,000, respectively, to all population and individual identifiers in the African data set.
+
+The African data set was provided in the Tishkoff et al. (2009) online supplement already merged with the HGDP-CEPH (Ramachandran et al. 2005; Rosenberg et al. 2005) and Asian Indian (Rosenberg et al. 2006) data sets. Tishkoff et al. had adjusted genotypes in the HGDP-CEPH and Asian Indian data sets to match the African data set, whereas we aim to adjust their African genotypes to match the combined HGDP-CEPH, Native American, Latino, Jewish, Asian Indian, CGP, and Pacific Islander data set. To identify loci at which a systematic change in allele size exists between the African data set and the combined data set, we applied the same procedure used for the Pacific Islander data set, considering at each locus only those pairs among the 1384 duplicate pairs (952 HGDP-CEPH and 432 Asian Indian) for which both individuals had non-missing genotypes; all loci had at least 960 of the 1384 duplicate pairs with non-missing genotypes.
+
+A note on the merging order:
+
+While we chose to merge all non-HGDP-CEPH data sets with the HGDP-CEPH data set—aligning allele sizes to the HGDP-CEPH—changing the merging order or the data set to which alleles are aligned is unlikely to substantially alter the patterns observed in subsequent analyses. The high degree of concordance between our allele size adjustments and those applied in previous studies suggests that at only a small number of loci does the potential exist for small allele size discrepancies to occur between the data set reported here and data sets that might be obtained with alternative merging strategies; consequently, patterns in allele size differences across populations would remain almost entirely unchanged.
