@@ -4,7 +4,7 @@ Variables and associated values coded for Gelato "population samples" are organi
 
 Each dataset is independent, and organized in separate folders. 
 
-    variables.csv: The list of variables for each population sample, coded in a dataset; must contain columns
+    samples.csv: The list of variables for each population sample, must contain columns
         SamplePopID: GELATO-wide unique identifier for the sample
         populationName: commonly used name for the sample
         samplesize: number of individuals per each sample
