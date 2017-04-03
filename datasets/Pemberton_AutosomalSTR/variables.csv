@@ -1,0 +1,262 @@
+SamplePopID,populationName,samplesize,geographicRegion,dataSet.of.origin,lat,lon,location,languoidName,glottocode,curation_notes,Exclude
+20,Orcadian,16,EUROPE,HGDP-CEPH,59,-3,OrkneyIslands,Scots,scot1243,ok,ok
+21,Adygei,17,EUROPE,HGDP-CEPH,44,39,Russia-Caucasus,Adyghe,adyg1241,automatically assigned by Robert F,ok
+22,Russian,25,EUROPE,HGDP-CEPH,61,40,Russia,Russian,russ1263,automatically assigned by Robert F,ok
+24,Basque,24,EUROPE,HGDP-CEPH,43,0,France,Basque,basq1248,automatically assigned by Robert F,ok
+25,French,29,EUROPE,HGDP-CEPH,46,2,France,Standard French,stan1290,automatically assigned by Robert F,ok
+27,Italian,13,EUROPE,HGDP-CEPH,46,10,Italy-Bergamo,Italian,ital1282,automatically assigned by Robert F,ok
+28,Sardinian,28,EUROPE,HGDP-CEPH,40,9,Italy,Sardinian,sard1257,automatically assigned by Robert F,ok
+29,Tuscan,8,EUROPE,HGDP-CEPH,43,11,Italy,Italian,ital1282,ok,ok
+34,Mozabite,30,MIDDLE_EAST,HGDP-CEPH,32,3,Algeria-Mzab,Tumzabt,tumz1238,ok,ok
+36,Bedouin,48,MIDDLE_EAST,HGDP-CEPH,31,35,Israel-Negev,Eastern Egyptian Bedawi Arabic,east2690,ok,ok
+37,Druze,47,MIDDLE_EAST,HGDP-CEPH,32,35,Israel-Carmel,South Levantine Arabic,sout3123,ok,ok
+38,Palestinian,51,MIDDLE_EAST,HGDP-CEPH,32,35,Israel-Central,South Levantine Arabic,sout3123,ok,ok
+50,Balochi,25,CENTRAL_SOUTH_ASIA,HGDP-CEPH,30.4987,66.5,Pakistan,Eastern Balochi,east2304,automatically assigned by Robert F,ok
+51,Brahui,25,CENTRAL_SOUTH_ASIA,HGDP-CEPH,30.4987,66.5,Pakistan,Brahui,brah1256,automatically assigned by Robert F,ok
+52,Burusho,25,CENTRAL_SOUTH_ASIA,HGDP-CEPH,36.4984,74,Pakistan,Burushaski,buru1296,ok,ok
+54,Hazara,23,CENTRAL_SOUTH_ASIA,HGDP-CEPH,33.4986,70,Pakistan,Hazaragi,haza1239,automatically assigned by Robert F,ok
+56,Kalash,25,CENTRAL_SOUTH_ASIA,HGDP-CEPH,35.9937,71.5,Pakistan,Kalasha,kala1372,automatically assigned by Robert F,ok
+57,Makrani,24,CENTRAL_SOUTH_ASIA,HGDP-CEPH,26,64,Pakistan,Makrani,makr1243,automatically assigned by Robert F,ok
+58,Pathan,24,CENTRAL_SOUTH_ASIA,HGDP-CEPH,33.487,70.5,Pakistan,Pashto,pash1269,ok,ok
+59,Sindhi,25,CENTRAL_SOUTH_ASIA,HGDP-CEPH,25.4906,69,Pakistan,Sindhi,sind1272,automatically assigned by Robert F,ok
+81,Piapoco,13,AMERICA,HGDP-CEPH,3,-68,Colombia,Piapoco,piap1246,automatically assigned by Robert F,ok
+82,Karitiana,24,AMERICA,HGDP-CEPH,-10,-63,Brazil,Kariti•À_na,kari1311,automatically assigned by Robert F,ok
+83,Surui,21,AMERICA,HGDP-CEPH,-11,-62,Brazil,Suru•À_,suru1262,ok,ok
+86,Maya,25,AMERICA,HGDP-CEPH,19,-91,Mexico,Yucatec Maya,yuca1254,ok,ok
+87,Pima,25,AMERICA,HGDP-CEPH,29,-108,Mexico,Pima Bajo,pima1248,automatically assigned by Robert F,ok
+464,Mandenka,24,AFRICA,HGDP-CEPH,12,-12,Senegal,Mandinka,mand1436,ok,ok
+465,Yoruba,50,AFRICA,HGDP-CEPH,7.99509,5,Nigeria,Yoruba,yoru1245,automatically assigned by Robert F,ok
+488,BiakaPygmy,32,AFRICA,HGDP-CEPH,4,17,CentralAfricanRepublic,Yaka,yaka1272,ok,ok
+489,MbutiPygmy,15,AFRICA,HGDP-CEPH,1,29,Congo,Asoa,NA,exclude,exclude
+494,San,7,AFRICA,HGDP-CEPH,-21,20,Namibia,Ju'hoan,juho1239,ok,ok
+501,Assamese,25,CENTRAL_SOUTH_ASIA,AsianIndian,26,93,India,Assamese,assa1263,automatically assigned by Robert F,ok
+502,Bengali,27,CENTRAL_SOUTH_ASIA,AsianIndian,23.2577,87.6667,India,Bengali,beng1280,automatically assigned by Robert F,ok
+504,Gujarati,252,CENTRAL_SOUTH_ASIA,AsianIndian,23,72,India,Gujarati,guja1252,automatically assigned by Robert F,ok
+505,Hindi,28,CENTRAL_SOUTH_ASIA,AsianIndian,26.9809,78.3936,India,Hindi,hind1269,automatically assigned by Robert F,ok
+506,Kannada,24,CENTRAL_SOUTH_ASIA,AsianIndian,15,75,India,Kannada,kann1255,automatically assigned by Robert F,ok
+507,Kashmiri,25,CENTRAL_SOUTH_ASIA,AsianIndian,32.44,74.54,India,Kashmiri,kash1277,automatically assigned by Robert F,ok
+508,Konkani,42,CENTRAL_SOUTH_ASIA,AsianIndian,14.5708,75.131,India,Konkani,konk1267,automatically assigned by Robert F,ok
+509,Malayalam,25,CENTRAL_SOUTH_ASIA,AsianIndian,10,76.25,India,Malayalam,mala1464,automatically assigned by Robert F,ok
+510,Marathi,26,CENTRAL_SOUTH_ASIA,AsianIndian,19.8168,75.9423,India,Marathi,mara1378,automatically assigned by Robert F,ok
+511,Marwari,25,CENTRAL_SOUTH_ASIA,AsianIndian,26.6717,74.264,India,Marwari (India),marw1260,correct by Harald,ok
+512,Oriya,26,CENTRAL_SOUTH_ASIA,AsianIndian,20,85,India,Oriya,oriy1255,automatically assigned by Robert F,ok
+513,Parsi,25,CENTRAL_SOUTH_ASIA,AsianIndian,19,72.8,India,Gujarati,guja1252,correct by Harald,ok
+514,Punjabi,27,CENTRAL_SOUTH_ASIA,AsianIndian,30.4716,75.2907,India,Panjabi,panj1256,automatically assigned by Robert F,ok
+515,Tamil,29,CENTRAL_SOUTH_ASIA,AsianIndian,11.1017,77.9483,India,Tamil,tami1289,automatically assigned by Robert F,ok
+516,Telugu,27,CENTRAL_SOUTH_ASIA,AsianIndian,15.9258,79.6296,India,Telugu,telu1262,automatically assigned by Robert F,ok
+601,Han,34,EAST_ASIA,HGDP-CEPH,32.2657,114,China,Mandarin Chinese,mand1415,correct by Harald,ok
+602,Han-NChina,10,EAST_ASIA,HGDP-CEPH,32.2657,114,China,Mandarin Chinese,mand1415,ok,ok
+606,Dai,10,EAST_ASIA,HGDP-CEPH,21,100,China,L•À_,luuu1242,correct by Harald - checked by Chiara,ok
+607,Daur,10,EAST_ASIA,HGDP-CEPH,48.4975,124,China,Dagur,daur1238,automatically assigned by Robert F,ok
+608,Hezhen,9,EAST_ASIA,HGDP-CEPH,47.4976,133.5,China,Kilen,kile1243,correct by Harald,ok
+611,Lahu,10,EAST_ASIA,HGDP-CEPH,22,100,China,Lahu,lahu1253,automatically assigned by Robert F,ok
+612,Miao,10,EAST_ASIA,HGDP-CEPH,28,109,China,Hmong Daw,hmon1333,correct by Harald,ok
+613,Oroqen,10,EAST_ASIA,HGDP-CEPH,50.4339,126.5,China,Oroqen,oroq1238,automatically assigned by Robert F,ok
+615,She,10,EAST_ASIA,HGDP-CEPH,27,119,China,She,shee1238,automatically assigned by Robert F,ok
+616,Tujia,10,EAST_ASIA,HGDP-CEPH,29,109,China,Tujia,tuji1244,automatically assigned by Robert F,ok
+617,Tu,10,EAST_ASIA,HGDP-CEPH,36,101,China,Tu,tuuu1240,automatically assigned by Robert F,ok
+618,Xibo,9,EAST_ASIA,HGDP-CEPH,43.4979,81.5,China,Xibe,xibe1242,ok,ok
+619,Yi,10,EAST_ASIA,HGDP-CEPH,28,103,China,Loloish,lolo1267,correct by Harald,ok
+622,Mongola,10,EAST_ASIA,HGDP-CEPH,45,111,China,Mongolian,mong1331,ok,ok
+625,Naxi,10,EAST_ASIA,HGDP-CEPH,26,100,China,Naxi,naxi1245,automatically assigned by Robert F,ok
+629,Uygur,10,CENTRAL_SOUTH_ASIA,HGDP-CEPH,44,81,China,Uighur,uigh1240,automatically assigned by Robert F,ok
+677,Cambodian,11,EAST_ASIA,HGDP-CEPH,12,105,Cambodia,Central Khmer,cent1989,correct by Harald,ok
+684,Japanese,29,EAST_ASIA,HGDP-CEPH,38,138,Japan,Japanese,japa1256,automatically assigned by Robert F,ok
+690,TundraNentsi,13,EAST_ASIA,NativeAmerican,66.08,76.5,Siberia,Tundra Yurak,tund1255,ok,ok
+699,Yakut,25,EAST_ASIA,HGDP-CEPH,62.9829,129.5,Siberia,Yakut,yaku1245,automatically assigned by Robert F,ok
+811,Chipewyan,28,AMERICA,NativeAmerican,59.55,-107.3,Canada,Chipewyan,chip1261,automatically assigned by Robert F,ok
+812,Cree,17,AMERICA,NativeAmerican,50.33,-102.5,Canada,Cree,cree1272,automatically assigned by Robert F,ok
+813,Ojibwa,20,AMERICA,NativeAmerican,46.5,-81,Canada,Ojibwa,ojib1241,automatically assigned by Robert F,ok
+821,Kaqchikel,12,AMERICA,NativeAmerican,15,-91,Guatemala,Kaqchikel,kaqc1270,automatically assigned by Robert F,ok
+822,Mixtec,19,AMERICA,NativeAmerican,17,-97,Mexico,NA,NA,exclude,exclude
+823,Mixe,20,AMERICA,NativeAmerican,17,-96,Mexico,NA,NA,exclude,exclude
+824,Zapotec,17,AMERICA,NativeAmerican,16,-97,Mexico,Zapotec,zapo1437,no better info,ok
+831,Guaymi,16,AMERICA,NativeAmerican,8.5,-82,Panama,Ng•À_bere,ngab1239,automatically assigned by Robert F,ok
+832,Cabecar,20,AMERICA,NativeAmerican,9.5,-84,CostaRica,Cab•À_car,cabe1245,automatically assigned by Robert F,ok
+833,Aymara,18,AMERICA,NativeAmerican,-22,-70,Chile,Southern Aymara,sout2996,Correct by Harald,ok
+834,Huilliche,19,AMERICA,NativeAmerican,-41,-73,Chile,Huilliche,huil1244,automatically assigned by Robert F,ok
+835,Guarani,10,AMERICA,NativeAmerican,-23,-54,Brazil,Mby•À_ Guaran•À_,mbya1239,correct by Harald,ok
+836,Ache,17,AMERICA,NativeAmerican,-24,-56,Paraguay,Ach•À_,ache1246,Correct by Harald,ok
+837,Kaingang,5,AMERICA,NativeAmerican,-24,-52.5,Brazil,Kaingang,kain1272,automatically assigned by Robert F,ok
+838,Quechua,20,AMERICA,NativeAmerican,-14,-74,Peru,Quechua IIC,quec1389,ok,ok
+841,Kogi,16,AMERICA,NativeAmerican,11,-74,Colombia,Cogui,cogu1240,automatically assigned by Robert F,ok
+842,Zenu,18,AMERICA,NativeAmerican,9,-75,Colombia,American Spanish,amer1254,ok,ok
+843,Inga,16,AMERICA,NativeAmerican,1,-77,Colombia,Inga,inga1252,automatically assigned by Robert F,ok
+844,Wayuu,17,AMERICA,NativeAmerican,11,-73,Colombia,Wayuu,wayu1243,automatically assigned by Robert F,ok
+845,TicunaArara,15,AMERICA,NativeAmerican,-4,-70,Colombia,Ticuna,ticu1245,ok,ok
+846,TicunaTarapaca,18,AMERICA,NativeAmerican,-4,-70,Colombia,Ticuna,ticu1245,ok,ok
+847,Embera,11,AMERICA,NativeAmerican,7,-76,Colombia,Embera,embe1258,automatically assigned by Robert F,ok
+848,Waunana,20,AMERICA,NativeAmerican,5,-77,Colombia,Woun Meu,woun1238,automatically assigned by Robert F,ok
+849,Arhuaco,16,AMERICA,NativeAmerican,11,-73.8,Colombia,Arhuaco,arhu1242,automatically assigned by Robert F,ok
+871,Oriente,19,LATINO,Latino,14.6333,-90.517,Guatemala,American Spanish,amer1254,ADMIXED. variable native american ancestry. no family information,ADMIXED
+872,MexicoCity,19,LATINO,Latino,19.4,-99.2,Mexico,American Spanish,amer1254,ADMIXED. variable native american ancestry. no family information,ADMIXED
+881,CVCR,20,LATINO,Latino,9.93333,-84.083,CostaRica,American Spanish,amer1254,ADMIXED. variable native american ancestry. no family information,ADMIXED
+882,Quetalmahue,20,LATINO,Latino,-41.467,-73.533,Chile,American Spanish,amer1254,ADMIXED. variable native american ancestry. no family information,ADMIXED
+883,Paposo,20,LATINO,Latino,-25.05,-70.267,Chile,American Spanish,amer1254,ADMIXED. variable native american ancestry. no family information,ADMIXED
+884,Catamarca,12,LATINO,Latino,-28.467,-65.783,Argentina,American Spanish,amer1254,ADMIXED. variable native american ancestry. no family information,ADMIXED
+885,Salta,19,LATINO,Latino,-24.783,-65.417,Argentina,American Spanish,amer1254,ADMIXED. variable native american ancestry. no family information,ADMIXED
+886,Tucuman,19,LATINO,Latino,-26.817,-65.217,Argentina,American Spanish,amer1254,ADMIXED. variable native american ancestry. no family information,ADMIXED
+887,RGS,20,LATINO,Latino,-31,-54,Brazil,Brazilian Portuguese,braz1246,ADMIXED. variable native american ancestry. no family information,ADMIXED
+891,Pasto,19,LATINO,Latino,1.21667,-77.283,Colombia,Pasto,past1243,automatically assigned by Robert F,ADMIXED
+892,Peque,20,LATINO,Latino,7.31667,-75.833,Colombia,American Spanish,amer1254,ADMIXED. variable native american ancestry. no family information,ADMIXED
+893,Medellin,20,LATINO,Latino,6.25,-75.583,Colombia,American Spanish,amer1254,ADMIXED. variable native american ancestry. no family information,ADMIXED
+894,Cundinamarca,19,LATINO,Latino,4.6,-74.083,Colombia,American Spanish,amer1254,ADMIXED. variable native american ancestry. no family information,ADMIXED
+901,AshkenaziJ,19,EUROPE,Jewish,31.6667,34.5667,Israel,Hebrew,hebr1245,ok,ok
+902,MoroccanJ,20,MIDDLE_EAST,Jewish,31.6667,34.5667,Israel,Judeo-Moroccan Arabic,jude1265,correct by Harald,ok
+903,TunisianJ,20,MIDDLE_EAST,Jewish,31.6667,34.5667,Israel,Judeo-Tunisian Arabic,jude1263,correct by Harald,ok
+904,TurkishJ,20,MIDDLE_EAST,Jewish,31.6667,34.5667,Israel,Hebrew,hebr1245,exclude,exclude
+1001,EastHigh-Gimi-Goroka,29,OCEANIA,PacificIslander,-6.083,145.4,NewGuinea,Gimi (Eastern Highlands),gimi1243,ok,ok
+1003,Sepik,20,OCEANIA,PacificIslander,-3.583,143.333,NewGuinea,NA,NA,exclude,exclude
+1004,Kove,25,OCEANIA,PacificIslander,-5.4667,148.95,NewBritain,Kove,kove1237,automatically assigned by Robert F,ok
+1005,Anem-Keraiai,16,OCEANIA,PacificIslander,-5.45,148.983,NewBritain,Anem,anem1249,ok,ok
+1006,Anem-Purailing,17,OCEANIA,PacificIslander,-5.45,148.984,NewBritain,Anem,anem1249,ok,ok
+1007,Mangseng,20,OCEANIA,PacificIslander,-5.933,150.7,NewBritain,Mangseng,mang1403,automatically assigned by Robert F,ok
+1008,Melamela,25,OCEANIA,PacificIslander,-5,151.25,NewBritain,Meramera,mera1242,automatically assigned by Robert F,ok
+1009,Mengen,23,OCEANIA,PacificIslander,-5.1,151.4,NewBritain,Mengen,meng1267,automatically assigned by Robert F,ok
+1010,Sulka-Ganai,22,OCEANIA,PacificIslander,-4.5,152.333,NewBritain,Sulka,sulk1246,ok,ok
+1011,Sulka-Watwat,15,OCEANIA,PacificIslander,-4.483,152.3,NewBritain,Sulka,sulk1246,ok,ok
+1012,Kol,20,OCEANIA,PacificIslander,-5.383,151.633,NewBritain,Kol,koll1254,automatically assigned by Robert F,ok
+1013,Nakanai-Bileki,24,OCEANIA,PacificIslander,-5.75,150.8,NewBritain,Nakanai,naka1262,ok,ok
+1014,Nakanai-Loso,17,OCEANIA,PacificIslander,-5.483,150.8,NewBritain,Nakanai,naka1262,ok,ok
+1015,Mamusi-Kisiluvi,22,OCEANIA,PacificIslander,-5.7333,151.083,NewBritain,Mamusi,mamu1254,ok,ok
+1016,Mamusi-Lingite,20,OCEANIA,PacificIslander,-5.867,151.1,NewBritain,Mamusi,mamu1254,ok,ok
+1017,Ata-Uasilau,24,OCEANIA,PacificIslander,-5.683,151,NewBritain,Pele-Ata,pele1245,ok,ok
+1018,Ata-Lugei,23,OCEANIA,PacificIslander,-5.6,151,NewBritain,Pele-Ata,pele1245,ok,ok
+1019,Baining-Malasait,25,OCEANIA,PacificIslander,-4.467,151.9,NewBritain,Baining,bain1263,ok,ok
+1020,Baining-Marabu,25,OCEANIA,PacificIslander,-4.633,152.3,NewBritain,Baining,bain1263,ok,ok
+1021,Baining-Rangulit,22,OCEANIA,PacificIslander,-4.4,151.9,NewBritain,Baining,bain1263,ok,ok
+1022,Tolai-Kabakada,18,OCEANIA,PacificIslander,-4.483,152.1,NewBritain,Kabakada,kaba1283,ok,ok
+1023,Tolai-Vunairoto,21,OCEANIA,PacificIslander,-4.2,152.1,NewBritain,Kabakada,kaba1283,ok,ok
+1024,Mussau,25,OCEANIA,PacificIslander,-1.583,149.733,Mussau,Mussau-Emira,muss1246,automatically assigned by Robert F,ok
+1025,Lavongai-North,24,OCEANIA,PacificIslander,-2.433,150.35,NewHanover,Tungag,tung1290,ok,ok
+1026,Lavongai-South,22,OCEANIA,PacificIslander,-2.5667,150.433,NewHanover,Tungag,tung1290,ok,ok
+1027,Tigak,23,OCEANIA,PacificIslander,-2.6,150.87,NewIreland,Tigak,tiga1245,automatically assigned by Robert F,ok
+1028,Nalik,24,OCEANIA,PacificIslander,-2.983,151.52,NewIreland,Nalik,nali1244,automatically assigned by Robert F,ok
+1029,Notsi,23,OCEANIA,PacificIslander,-3.05,151.65,NewIreland,Notsi,nots1237,automatically assigned by Robert F,ok
+1030,Kuot-Kabil,25,OCEANIA,PacificIslander,-3.067,151.7,NewIreland,Kuot,kuot1243,ok,ok
+1031,Kuot-Lamalaua,18,OCEANIA,PacificIslander,-3,151.5,NewIreland,Kuot,kuot1243,ok,ok
+1032,Madak,24,OCEANIA,PacificIslander,-3.1,151.7,NewIreland,Madak,mada1285,automatically assigned by Robert F,ok
+1033,Saposa,25,OCEANIA,PacificIslander,-5.5833,154.67,Bougainville,Saposa,sapo1253,automatically assigned by Robert F,ok
+1034,Teop,23,OCEANIA,PacificIslander,-5.85,155.18,Bougainville,Teop,teop1238,automatically assigned by Robert F,ok
+1035,Aita,25,OCEANIA,PacificIslander,-5.9,155.083,Bougainville,Aita,aita1238,automatically assigned by Robert F,ok
+1037,Nasioi,23,OCEANIA,PacificIslander,-6.483,155.833,Bougainville,Nasioi,nasi1247,automatically assigned by Robert F,ok
+1040,Micronesians,16,OCEANIA,PacificIslander,12.5,150,Micronesia,Palauan,pala1344,ok,ok
+1041,Samoans,10,OCEANIA,PacificIslander,-13.35,-172.2,Polynesia,Samoan,samo1305,ok,ok
+1042,Maoris,30,OCEANIA,PacificIslander,-41,174,Polynesia,Maori,maor1246,ok,ok
+1043,Ami,25,EAST_ASIA,PacificIslander,23.3,121,Taiwan,Amis,amis1246,Correct by Harald,ok
+1044,Taruko,25,EAST_ASIA,PacificIslander,23.3,121,Taiwan,Taroko,taro1264,ok,ok
+1101,Hadza,61,AFRICA,African,-3.8,35.3,Tanzania,Hadza,hadz1240,automatically assigned by Robert F,ok
+1102,Sandawe,51,AFRICA,African,-5.5,35.5,Tanzania,Sandawe,sand1273,automatically assigned by Robert F,ok
+1103,Iraqw,46,AFRICA,African,-4,35.5,Tanzania,Iraqw,iraq1241,automatically assigned by Robert F,ok
+1104,Turu,32,AFRICA,African,-5,35,Tanzania,Nyaturu,nyat1246,correct by Harald,ok
+1105,Mbugwe,21,AFRICA,African,-3.8,35.8,Tanzania,Mbugwe,mbug1242,automatically assigned by Robert F,ok
+1106,Rangi,36,AFRICA,African,-5,36,Tanzania,Langi,lang1320,automatically assigned by Robert F,ok
+1107,Burunge,21,AFRICA,African,-5.3,36,Tanzania,Burunge,buru1320,automatically assigned by Robert F,ok
+1108,Maasai-Tanzania,36,AFRICA,African,-4,37,Tanzania,Maasai,masa1300,maybe,ok
+1109,Akie,23,AFRICA,African,-5,37.5,Tanzania,Akie,mosi1247,Correct by Harald,ok
+1110,Pare,23,AFRICA,African,-4.5,38,Tanzania,Asu (Tanzania),asut1235,correct by Harald,ok
+1111,Mbugu,22,AFRICA,African,-4.8,38.5,Tanzania,Mbugu,mbug1240,automatically assigned by Robert F,ok
+1112,Baka,48,AFRICA,African,2.5,13.5,Cameroon,Baka (Cameroon),baka1272,automatically assigned by Robert F,ok
+1113,Bakola,42,AFRICA,African,2.8,10,Cameroon,Gyele,gyel1242,automatically assigned by Robert F,ok
+1114,Bedzan,17,AFRICA,African,5.5,11.6,Cameroon,Tikar,tika1246,ok,ok
+1115,Mvae,24,AFRICA,African,3,12,Cameroon,Mvae,mvae1238,automatically assigned by Robert F,ok
+1116,Ngumba,26,AFRICA,African,3,10.3,Cameroon,Kwasio,kwas1243,automatically assigned by Robert F,ok
+1117,FulaniAdamawa,41,AFRICA,African,9,13.5,Cameroon,Adamawa Fulfulde,adam1253,correct by Harald,ok
+1118,Kanuri,31,AFRICA,African,11.3,14.3,Cameroon,Central Kanuri,cent2050,automatically assigned by Robert F,ok
+1119,Mada,28,AFRICA,African,10.8,14.1,Cameroon,Mada (Cameroon),mada1293,correct by Harald,ok
+1120,Zime,30,AFRICA,African,9,14.5,Cameroon,Herde,herd1236,automatically assigned by Robert F,ok
+1121,Ouldeme,26,AFRICA,African,11,14.3,Cameroon,Wuzlam,wuzl1236,automatically assigned by Robert F,ok
+1122,Giziga,24,AFRICA,African,10.3,14.3,Cameroon,North Giziga,nort3047,automatically assigned by Robert F,ok
+1123,Mandara,26,AFRICA,African,11.3,14,Cameroon,Mandara,mand1440,automatically assigned by Robert F,ok
+1124,Baggara,23,AFRICA,African,12.5,14.5,Cameroon,Chadian Arabic,chad1249,ok,ok
+1125,Kotoko,17,AFRICA,African,11.8,14.8,Cameroon,Afade,afad1236,automatically assigned by Robert F,ok
+1126,Zulgo,22,AFRICA,African,10.8,14,Cameroon,Zulgo,zulg1243,automatically assigned by Robert F,ok
+1127,Bamoun,31,AFRICA,African,5.5,10.8,Cameroon,Bamun,bamu1253,Correct by Harald,ok
+1128,Banen,25,AFRICA,African,4.8,10.8,Cameroon,Tunen,tune1241,automatically assigned by Robert F,ok
+1129,Bafia,30,AFRICA,African,4.8,11,Cameroon,Bafia,bafi1243,automatically assigned by Robert F,ok
+1130,Lemande,26,AFRICA,African,4.5,11,Cameroon,Nomaande,noma1260,automatically assigned by Robert F,ok
+1131,Batanga,20,AFRICA,African,3,10,Cameroon,Batanga,bata1285,automatically assigned by Robert F,ok
+1132,Podokwo,30,AFRICA,African,11,12.1,Cameroon,Parkwa,park1239,automatically assigned by Robert F,ok
+1185,Bassange,20,AFRICA,African,9,5.5,Nigeria,Nupe,nupe1254,ok,ok
+1186,Igbo,28,AFRICA,African,6,7,Nigeria,Igbo,igbo1259,automatically assigned by Robert F,ok
+1187,Igala,17,AFRICA,African,7,7,Nigeria,Igala,igal1242,automatically assigned by Robert F,ok
+1188,Gwari,22,AFRICA,African,10,7,Nigeria,Gbagyi,gbag1258,automatically assigned by Robert F,ok
+1189,Hausa-Nigeria,16,AFRICA,African,12,8,Nigeria,Hausa,haus1257,maybe,ok
+1190,BejaBanuamir,23,MIDDLE_EAST,African,21,36,Sudan,Beni-Amir,beni1248,ok,ok
+1191,Dinka,16,AFRICA,African,8,30,Sudan,Dinka,dink1262,automatically assigned by Robert F,ok
+1192,Datoga,54,AFRICA,African,-4.5,35.5,Tanzania,Datooga,dato1239,automatically assigned by Robert F,ok
+1193,Sukuma,10,AFRICA,African,-3,33.5,Tanzania,Sukuma,suku1261,automatically assigned by Robert F,ok
+1194,Gogo,13,AFRICA,African,-6,36,Tanzania,Gogo,gogo1263,automatically assigned by Robert F,ok
+1195,FiomeGorowa,22,AFRICA,African,-4.3,35.8,Tanzania,Gorowa,goro1270,ok,ok
+1196,Iyassa,37,AFRICA,African,2.5,9.8,Cameroon,Yasa,yasa1242,ok,ok
+1197,Fang,19,AFRICA,African,2.5,13,Cameroon,Fang,fang1247,automatically assigned by Robert F,ok
+1198,Mabea,13,AFRICA,African,2.9,10.3,Cameroon,Kwasio,kwas1243,automatically assigned by Robert F,ok
+1199,Yambassa,17,AFRICA,African,4.8,11.3,Cameroon,Nugunu (Cameroon),nugu1242,automatically assigned by Robert F,ok
+1200,SouthTikar,21,AFRICA,African,5.5,11.5,Cameroon,Tikar,tika1246,ok,ok
+1201,NorthTikar,13,AFRICA,African,6.3,11.5,Cameroon,Tikar,tika1246,ok,ok
+1202,Ntumu,11,AFRICA,African,2.3,10.5,Cameroon,Ntum,ntum1238,automatically assigned by Robert F,ok
+1203,Massa,15,AFRICA,African,10.3,15.3,Cameroon,Masana,masa1322,automatically assigned by Robert F,ok
+1204,Tupuri,22,AFRICA,African,10.3,14.8,Cameroon,Tupuri,tupu1244,automatically assigned by Robert F,ok
+1205,Bulu,22,AFRICA,African,3,11,Cameroon,Bulu (Cameroon),bulu1251,correct by Harald,ok
+1206,Ashanti,15,AFRICA,African,6,-1,Ghana,Asante,asan1239,ok,ok
+1207,Brong,26,AFRICA,African,7.5,-2,Ghana,Abron,abro1238,automatically assigned by Robert F,ok
+1209,Chicago,15,AFROEUROPEAN,African,41.8819,-87.628,USA,Standard English,stan1293,ADMIXED,ADMIXED
+1210,Pittsburgh,21,AFROEUROPEAN,African,40.4417,-80,USA,Standard English,stan1293,ADMIXED,ADMIXED
+1211,Baltimore,44,AFROEUROPEAN,African,39.2833,-76.617,USA,Standard English,stan1293,ADMIXED,ADMIXED
+1212,NorthCarolina,18,AFROEUROPEAN,African,35.220358,-80.124253,USA,Standard English,stan1293,ADMIXED,ADMIXED
+1214,MaasaiMumonyot,12,AFRICA,African,0.6,37,Kenya,Maasai,masa1300,maybe,ok
+1215,MaasaiIlgwesi,21,AFRICA,African,0.3,36.8,Kenya,Maasai,masa1300,maybe,ok
+1216,Samburu,18,AFRICA,African,1.5,37,Kenya,Samburu,samb1315,automatically assigned by Robert F,ok
+1217,Yaaku,19,AFRICA,African,0.5,37,Kenya,Yaaku,yaak1241,automatically assigned by Robert F,ok
+1219,Sambaa,18,AFRICA,African,-4.5,38.3,Tanzania,Shambala,sham1280,automatically assigned by Robert F,ok
+1220,Dorobo,10,AFRICA,African,-5,37,Tanzania,Dorobo,doro1262,exclude,exclude
+1223,BejaHadandawa,19,MIDDLE_EAST,African,21,36,Sudan,Hadendoa,hade1248,ok,ok
+1224,Tugen,22,AFRICA,African,0.8,35.8,Kenya,Tugen,tuge1241,automatically assigned by Robert F,ok
+1225,Burji,24,AFRICA,African,5.5,37.8,Ethiopia,Burji,burj1242,automatically assigned by Robert F,ok
+1226,Marakwet,14,AFRICA,African,1.3,35.5,Kenya,Markweeta,mark1255,automatically assigned by Robert F,ok
+1227,Luhya,17,AFRICA,African,0.5,34.5,Kenya,Central Luhya,cent2288,ok,ok
+1228,Luo,28,AFRICA,African,-0.5,34.5,Kenya,Luo (Kenya and Tanzania),luok1236,correct by Harald,ok
+1229,Kikuyu,21,AFRICA,African,-1,37,Kenya,Kikuyu,kiku1240,automatically assigned by Robert F,ok
+1230,Sengwer,21,AFRICA,African,1,35,Kenya,Markweta,mark1255,correct by Harald,ok
+1231,Okiek,22,AFRICA,African,0.3,36,Kenya,Okiek,okie1245,automatically assigned by Robert F,ok
+1232,Wata,6,AFRICA,African,3.5,37,Kenya,Waata,waat1238,Correct by Harald,ok
+1233,Nandi,11,AFRICA,African,0,35.5,Kenya,Nandi,nand1266,automatically assigned by Robert F,ok
+1234,ElMolo,16,AFRICA,African,2.8,36.8,Kenya,El Molo,elmo1238,ok,ok
+1235,Gabra,16,AFRICA,African,3,37.5,Kenya,Gabra,gabr1255,automatically assigned by Robert F,ok
+1236,Sabaot,20,AFRICA,African,1,34.8,Kenya,Sabaot,saba1262,automatically assigned by Robert F,ok
+1237,Rendille,28,AFRICA,African,2.3,37.5,Kenya,Rendille,rend1243,automatically assigned by Robert F,ok
+1238,Turkana,26,AFRICA,African,3,36,Kenya,Turkana,turk1308,automatically assigned by Robert F,ok
+1239,Pokot,23,AFRICA,African,1.5,35.5,Kenya,P•À_koot,poko1263,automatically assigned by Robert F,ok
+1240,Borana,32,AFRICA,African,3,38,Kenya,Borana,bora1272,automatically assigned by Robert F,ok
+1242,Konso,14,AFRICA,African,5.5,37.5,Ethiopia,Konso,kons1243,automatically assigned by Robert F,ok
+1243,Laka,33,AFRICA,African,8,16,Chad,Laka (Chad),laka1254,correct by Harald,ok
+1244,Ngambaye,30,AFRICA,African,9,16,Chad,Ngambay,ngam1268,ok,ok
+1245,Kaba,27,AFRICA,African,8,16.8,Chad,Kaba,kaba1281,automatically assigned by Robert F,ok
+1246,Bulala,15,AFRICA,African,13,18,Chad,Naba,naba1253,correct by Harald,ok
+1247,Kanembou,5,AFRICA,African,14,15,Chad,Kanembu,kane1243,automatically assigned by Robert F,ok
+1248,Mbum,13,AFRICA,African,5.5,13.5,CentralAfricanRepublic,Mbum,mbum1254,automatically assigned by Robert F,ok
+1249,TutsiHutu,8,AFRICA,African,-2,30,Rwanda,Kinyarwanda,kiny1244,ok,ok
+1250,Yakoma,6,AFRICA,African,4.3,22.3,CentralAfricanRepublic,Yakoma,yako1252,automatically assigned by Robert F,ok
+1252,Gbaya,15,AFRICA,African,5,15,CentralAfricanRepublic,Gbaya-Manza-Ngbaka,gbay1279,correct by Harald,ok
+1253,FulaniMbororo,13,AFRICA,African,11.8,14.8,Cameroon,Adamawa Fulfulde,adam1253,ok,ok
+1254,Wimbum,14,AFRICA,African,6.5,10.8,Cameroon,Limbum,limb1268,automatically assigned by Robert F,ok
+1255,Batie,16,AFRICA,African,4.3,11,Cameroon,Ghom•À_l•À_',ghom1247,automatically assigned by Robert F,ok
+1256,Hausa-Cameroon,27,AFRICA,African,10.5,14.5,Cameroon,Hausa,haus1257,maybe,ok
+1257,Kongo,17,AFRICA,African,-5.5,15,DemocraticRepublicCongo,Koongo,koon1244,automatically assigned by Robert F,ok
+1258,Barega,4,AFRICA,African,-3.5,28,DemocraticRepublicCongo,Lega-Mwenga,lega1250,ok,ok
+1259,Baluba,5,AFRICA,African,-9,25,DemocraticRepublicCongo,Baluba,balu1255,automatically assigned by Robert F,ok
+1262,Dioula,5,AFRICA,African,9.5,-4.5,IvoryCoast,Dyula,dyul1238,automatically assigned by Robert F,ok
+1266,Ewondo,3,AFRICA,African,3.8,11.5,Cameroon,Ewondo,ewon1239,automatically assigned by Robert F,ok
+1267,Eton,4,AFRICA,African,4.3,11.5,Cameroon,Eton,eton1256,automatically assigned by Robert F,ok
+1268,Nuer,17,AFRICA,African,8.5,31,Sudan,Nuer,nuer1246,automatically assigned by Robert F,ok
+1269,Shilook,15,AFRICA,African,10,32,Sudan,Shilluk,shil1265,ok,ok
+1270,Nyimang,12,AFRICA,African,12.3,29.5,Sudan,Nyimang,nyim1244,automatically assigned by Robert F,ok
+1271,Sara-various,26,AFRICA,African,8,17.5,Chad,Central Sara,cent2044,ok,ok
+1272,CapeTown,33,AFROEUROPEAN,African,-34,18.5,SouthAfrica,Standard English,stan1293,ADMIXED,ADMIXED
+1273,Venda,11,AFRICA,African,-22.5,30,SouthAfrica,Venda,vend1245,automatically assigned by Robert F,ok
+1274,!XunKxoe,6,AFRICA,African,-30,18,SouthAfrica,Sekele,oung1238,ok,ok
+1275,Xhosa,27,AFRICA,African,-32,28,SouthAfrica,Xhosa,xhos1239,automatically assigned by Robert F,ok
+1276,Koma,9,AFRICA,African,8.5,12.7,Nigeria,Koma Ndera,koma1266,correct by Harald,ok
+1277,BetaIsrael,17,AFRICA,African,12,38,Ethiopia,Hebrew,NA,exclude,exclude
+1280,Temani,18,MIDDLE_EAST,African,15,45,Yemen,Judeo-Yemeni Arabic,jude1267,correct by Harald,ok
+1281,Fulani-Nigeria,4,AFRICA,African,11,11,Nigeria,Nigerian Fulfulde,nige1253,ok,ok
