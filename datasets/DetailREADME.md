@@ -24,6 +24,8 @@ lon: latitude of the sampling location (might differ from the glottocode locatio
         
 ### data.csv: The calculated genetic values - i.e. summary statistics. must contain columns
            - ExpectedHeterozygosity: Expected heterozygosity (Hs), equivalent to Nei’s genetic diversity [D]
+           - AverageDistance: Mean genetic distance between the target sample and all the samples of the dataset
+           - AverageDistanceRegional: Mean genetic distance between the sample all the samples of the same geographicRegion
        
   ### popDistance.csv: the matrix of genetic distance between populations calculated with the function Dist.genpop (Nei 1972) [link](https://www.rdocumentation.org/packages/adegenet/versions/2.0.1/topics/dist.genpop)
     
