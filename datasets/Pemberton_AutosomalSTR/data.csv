@@ -1,4 +1,4 @@
-SamplePopID;populationName.x;ExpectedHeterozygosity;ooa;AverageDistance;AverageDistanceRegional
+SamplePopID;populationName.x;heterozygosity;ooa;avgfst;avgregfst
 20;Orcadian;0.699202528;6602170.84706578;0.224441939;0.100895597
 21;Adygei;0.706247279;4172354.77378805;0.208404076;0.140964427
 22;Russian;0.715475109;5980569.57214357;0.200500549;0.097060316
