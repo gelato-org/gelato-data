@@ -1,0 +1,4 @@
+VarID,Variable name,Description,Source
+homozyg,Homozygosity,"Expected homozygosity, commonly used for measuring within population genetic diversity.",
+averageFST,Average Fst 2,Mean genetic distance between the given genetic sample and the other samples of the dataset. See Matrix of genetic distances for all the pairwise distances.,
+averageFSTregion,Average regional Fst 2,Mean of the genetic distance between the given genetic sample  and the other samples of the same geographic region. See Matrix of genetic distances for all the pairwise distances.,

@@ -15,10 +15,12 @@ from __future__ import unicode_literals, division, print_function
 import os
 import sys
 
-from clldutils.clilib import ArgumentParser, ParserError
+import openpyxl
+from clldutils.clilib import ArgumentParser, ParserError, command
 from clldutils.path import Path
 from clldutils import licenses
 from clldutils.markup import Table
+from csvw.dsv import UnicodeWriter
 
 import pygelato
 from pygelato.util import data_path
@@ -49,6 +51,7 @@ def get_dataset(args, name=None):
     return Dataset(dir_, glottolog_repos=args.glottolog_repos)
 
 
+@command()
 def download(args):
     """
     Download the raw data for a dataset.
@@ -58,6 +61,7 @@ def download(args):
     get_dataset(args).download()
 
 
+@command()
 def ls(args):
     """
     gelato ls [COLS]+
@@ -85,8 +89,54 @@ def ls(args):
     print(table.render(tablefmt='simple', sortkey=lambda r: r[0], condensed=False))
 
 
+@command()
+def ho(args):
+    """
+    SamplePopID,populationName,samplesize,geographicRegion,dataSet.of.origin,lat,lon,location,languoidName,glottocode,curation_notes,Exclude
+
+    population	samplesize	geographicRegion	lat	lon	Country	FreqSharingTot	FreqsharingWithin
+    FreqSharingOut	Mean_lengthsharingWithin	totallenghtsharing	howmanypops	homozyg	variancehomozyg
+    averageFST	averageFSTregion	PANEL	glottocodeBase	glottocodeRecent	glottolog.node1	notes	curationNotes
+
+    """
+    m = {
+        'SamplePopID': 'SamplePopID',
+        'population': 'populationName',
+        'samplesize': 'samplesize',
+        'geographicRegion': 'geographicRegion',
+        #'': 'dataSet.of.origin',
+        'lat': 'lat',
+        'lon': 'lon',
+        'Country': 'location',
+        #'': 'languoidName',
+        'glottocodeBase': 'glottocode',
+        'curationNotes': 'curation_notes',
+        #'': 'Exclude',
+    }
+    m = {v: k for k, v in m.items()}
+    sheader = 'SamplePopID populationName samplesize geographicRegion lat lon location glottocode curation_notes'.split()
+    sheet = openpyxl.load_workbook(
+        str(Path(__file__).parent.parent.parent / 'popmore5individuals_geninfo.xlsx'),
+        data_only=True).active
+    header = []
+
+    dsdir = Path(__file__).parent.parent / 'datasets' / 'HumanOrigins_AutosomalSNP'
+    with UnicodeWriter(dsdir / 'samples.csv') as s, UnicodeWriter(dsdir / 'data.csv', delimiter=';') as d:
+        s.writerow(sheader)
+        d.writerow('SamplePopID;populationName.x;homozyg;averageFST;averageFSTregion'.split(';'))
+        for i, row in enumerate(sheet.rows):
+            row = [c.value for c in row]
+            if i == 0:
+                header = row
+                continue
+            row = dict(zip(header, row))
+            row['SamplePopID'] = str(i)
+            s.writerow([row[m[h]] for h in sheader])
+            d.writerow([row['SamplePopID'], row['population'], row['homozyg'], row['averageFST'], row['averageFSTregion']])
+
+
 def main():
-    parser = ArgumentParser('pygelato', download, ls)
+    parser = ArgumentParser('pygelato')
     parser.add_argument(
         '--gelato-repos',
         help="path to gelato data repository",

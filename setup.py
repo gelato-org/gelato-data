@@ -11,6 +11,7 @@ requires = [
     'tqdm',
     'bagit>=1.5.4',
     'pybtex',
+    'openpyxl',
 ]
 
 setup(
@@ -34,7 +35,7 @@ setup(
     zip_safe=False,
     install_requires=requires,
     entry_points={
-        'console_scripts': ['gelato=pygelato.cli:main'],
+        'console_scripts': ['gelato=pygelato.__main__:main'],
     },
     tests_require=[],
     test_suite="pygelato")
