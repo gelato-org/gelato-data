@@ -1,6 +1,9 @@
-This panel is assembled from published sources which genotyped population samples with the Human Origins SNP chip (Affymetrix).
-The SNP chip is designed for studies on human population history and diversity and ascertainment bias is minimized [REFF](https://doi.org/10.1534/genetics.112.145037) 
+# Autosomal SNP chip dataset 
+## Human Origins, Affymetrix
 
-The data consists of autosomal SNPs (597573 variants) for 3638 individuals from 342 worldwide populations with a minimum of 5 individuals per population.
 
-The original publication from which each population genetic sample is first described is indicated.
+The panel of populations analyzed are typed for the Human Origins Array (Affymetrix), a SNP set selected for population history studies and ascertained against the genomic diversity found in 11 individuals from different continents [Patterson et al., 2012](https://doi.org/10.1534/genetics.112.145037). 
+
+For the current dataset analysis, only autosomal chromosomes are considered, for a total of 593,124 SNPs used. Population samples are included from previously published genetic studies ([See references](https://github.com/gelato-org/gelato-data/blob/master/datasets/HumanOrigins_AutosomalSNP/publicationList.csv)). We included only populations with a minimum of 5 individuals for a total of 397 populations and 4030 individuals with a minimum of 550,000 SNPs successfully genotyped. Missing data is ~0.1%. 
+
+Genetic distances and other associated statistics elaborated in GeLaTo are shaped by population relationships and demographic history. The elaborated values associated to each population are therefore suitable for population history investigation, and is not intended for medical or commercial purposes. The use of the scientific information in GeLaTo should be carried with respect of people culture and traditions.
