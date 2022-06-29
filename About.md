@@ -4,11 +4,16 @@
 ### Credits
 
 GeLaTo was created by by Chiara Barbieri, Damián Blasi and Robert Forkel.
+
 Chiara Barbieri: genetic data curation, population genetics analysis, database assembly. 
+
 Damián Blasi: conceptualization, project name.
+
 Robert Forkel: database structure and web implementation in CLDF.
 
+
 ![](https://gelato.clld.org/static/gelatauro.png)
+
 
 The concept of GeLaTo was developed from conversations at the Department of Linguistic and Cultural Evolution at the Max Planck Institute for the Science of Human History, Jena, Germany, and the dataset was assembled at the University of Zurich.
 Concept supervision: Russell Gray, Balthasar Bickel, Kentaro Shimizu.
@@ -31,6 +36,8 @@ Glottolog data is curated in a public repository at  https://github.com/gelato-o
 Academic publications which deal with GeLaTo include:
 
 **202X**
+
 Barbieri, Blasi et al. 202X
+
 A global analysis of matches and mismatches between human genetic and linguistic histories.
 BibTeX
