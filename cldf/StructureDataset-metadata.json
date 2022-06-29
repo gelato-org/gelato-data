@@ -14,7 +14,7 @@
         {
             "rdf:about": "https://github.com/gelato-org/gelato-data",
             "rdf:type": "prov:Entity",
-            "dc:created": "263576f",
+            "dc:created": "f5a5837",
             "dc:title": "Repository"
         },
         {
@@ -55,6 +55,7 @@
                         "name": "ID"
                     },
                     {
+                        "dc:description": "Links a value to a population.",
                         "dc:extent": "singlevalued",
                         "datatype": "string",
                         "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#languageReference",
@@ -132,7 +133,7 @@
         },
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#LanguageTable",
-            "dc:description": "A genetic population mapped to a language.",
+            "dc:description": "Rows in this table represent genetic population mapped to a language. These populations constitute the primary unit of investigation in GeLaTo.",
             "dc:extent": 397,
             "tableSchema": {
                 "columns": [

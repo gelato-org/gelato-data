@@ -43,7 +43,9 @@ class Dataset(BaseDataset):
                 "separator": ";"
             }
         )
-        t.common_props['dc:description'] = """A genetic population mapped to a language."""
+        t.common_props['dc:description'] = \
+            "Rows in this table represent genetic population mapped to a language. These " \
+            "populations constitute the primary unit of investigation in GeLaTo."
         cldf.add_component(
             'ParameterTable',
             {
@@ -60,6 +62,8 @@ class Dataset(BaseDataset):
                     "cartesian product of the set of populations."
             },
         )
+        cldf['ValueTable', 'Language_ID'].common_props['dc:description'] = \
+            "Links a value to a population."
 
     def cmd_makecldf(self, args):
         self.schema(args.writer.cldf)
