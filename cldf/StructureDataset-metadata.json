@@ -14,7 +14,7 @@
         {
             "rdf:about": "https://github.com/gelato-org/gelato-data",
             "rdf:type": "prov:Entity",
-            "dc:created": "0a0a619",
+            "dc:created": "bd70ab2",
             "dc:title": "Repository"
         },
         {
@@ -107,7 +107,7 @@
                             "Language_ID"
                         ],
                         "reference": {
-                            "resource": "languages.csv",
+                            "resource": "populations.csv",
                             "columnReference": [
                                 "ID"
                             ]
@@ -118,7 +118,7 @@
                             "Parameter_ID"
                         ],
                         "reference": {
-                            "resource": "parameters.csv",
+                            "resource": "variables.csv",
                             "columnReference": [
                                 "ID"
                             ]
@@ -129,11 +129,11 @@
                     "ID"
                 ]
             },
-            "url": "values.csv"
+            "url": "data.csv"
         },
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#LanguageTable",
-            "dc:description": "Rows in this table represent genetic population mapped to a language. These populations constitute the primary unit of investigation in GeLaTo.",
+            "dc:description": "Rows in this table represent genetic populations mapped to a language. These populations constitute the primary unit of investigation in GeLaTo.",
             "dc:extent": 397,
             "tableSchema": {
                 "columns": [
@@ -241,7 +241,7 @@
                     "ID"
                 ]
             },
-            "url": "languages.csv"
+            "url": "populations.csv"
         },
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#ParameterTable",
@@ -279,7 +279,7 @@
                     "ID"
                 ]
             },
-            "url": "parameters.csv"
+            "url": "variables.csv"
         }
     ]
 }
