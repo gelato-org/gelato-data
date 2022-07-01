@@ -3,7 +3,7 @@ import decimal
 import pathlib
 import collections
 
-from cldfbench import Dataset as BaseDataset, CLDFSpec
+from cldfbench import Dataset as BaseDataset, CLDFSpec, CLDFWriter
 from pycldf.sources import Sources
 from csvw import Datatype
 from csvw.dsv_dialects import Dialect
@@ -89,8 +89,12 @@ class Dataset(BaseDataset):
                     "cartesian product of the set of populations."
             },
         )
-        cldf['ValueTable', 'Language_ID'].common_props['dc:description'] = \
-            "Links a value to a population."
+        lid = cldf['ValueTable', 'languageReference']
+        lid.name = 'Population_ID'
+        lid.common_props['dc:description'] = "Links a value to a population."
+        for fk in cldf['ValueTable'].tableSchema.foreignKeys:
+            if fk.columnReference == ['Language_ID']:
+                fk.columnReference = ['Population_ID']
 
     def cmd_makecldf(self, args):
         glangs = args.glottolog.api.cached_languoids
@@ -149,7 +153,7 @@ class Dataset(BaseDataset):
                             vc += 1
                             args.writer.objects['ValueTable'].append(dict(
                                 ID=str(vc),
-                                Language_ID=row['SamplePopID'],
+                                Population_ID=row['SamplePopID'],
                                 Parameter_ID=k.replace(' ', '_'),
                                 Value=row[k],
                             ))
@@ -184,7 +188,7 @@ class Dataset(BaseDataset):
                         vc += 1
                         args.writer.objects['ValueTable'].append(dict(
                             ID=str(vc),
-                            Language_ID=popId,
+                            Population_ID=popId,
                             Parameter_ID=vid,
                             Value=json.dumps(v),
                         ))

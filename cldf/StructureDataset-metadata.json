@@ -14,7 +14,7 @@
         {
             "rdf:about": "https://github.com/gelato-org/gelato-data",
             "rdf:type": "prov:Entity",
-            "dc:created": "bd70ab2",
+            "dc:created": "12a65f1",
             "dc:title": "Repository"
         },
         {
@@ -60,7 +60,7 @@
                         "datatype": "string",
                         "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#languageReference",
                         "required": true,
-                        "name": "Language_ID"
+                        "name": "Population_ID"
                     },
                     {
                         "dc:extent": "singlevalued",
@@ -104,7 +104,7 @@
                 "foreignKeys": [
                     {
                         "columnReference": [
-                            "Language_ID"
+                            "Population_ID"
                         ],
                         "reference": {
                             "resource": "populations.csv",
