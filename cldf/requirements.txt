@@ -2,7 +2,7 @@ appdirs==1.4.4
 bs4==0.0.1
 certifi==2021.10.8
 cldfbench==1.11.0
--e git+https://github.com/gelato-org/gelato-data@c97b552749502e5b02d0af427981df6c4f2154c4#egg=cldfbench_gelato
+-e git+https://github.com/gelato-org/gelato-data@1b4a8d56533865392496b48a537e5ce6d2c39b1e#egg=cldfbench_gelato
 cldfcatalog==1.5.1
 clldutils==3.10.1
 colorlog==6.6.0

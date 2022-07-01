@@ -21,6 +21,7 @@ class Dataset(BaseDataset):
                 LanguageTable='populations.csv',
                 ParameterTable='variables.csv',
                 ValueTable='data.csv',
+                ContributionTable='panels.csv',
             )
         )
 
@@ -62,6 +63,11 @@ class Dataset(BaseDataset):
                 "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#source",
                 "datatype": {"base": "string"},
                 "separator": ";"
+            },
+            {
+                "name": "Panel_ID",
+                "dc:description": "Populations are defined by a set of samples from a panel.",
+                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#contributionReference",
             }
         )
         cldf['LanguageTable'].common_props['dc:description'] = \
@@ -110,6 +116,11 @@ class Dataset(BaseDataset):
         vc = 0
         for d in self.dir.joinpath('datasets').iterdir():
             if d.is_dir() and d.stem != 'Pemberton_AutosomalSTR':
+                args.writer.objects['ContributionTable'].append(dict(
+                    ID=d.stem,
+                    Name=d.stem.replace('_', ' '),
+                    Description=d.joinpath('README.md').read_text(encoding='utf8'),
+                ))
                 for s in d.read_csv('samples.csv', dicts=True):
                     popname2id[s['PopName']] = s['SamplePopID']
                     glang = glangs[s['glottocodeBase']]
@@ -130,6 +141,7 @@ class Dataset(BaseDataset):
                         LanguageFamily=family.name,  # s['LanguageFamily'],
                         curation_notes_linguistics=s['curation_notes_linguistics'],
                         curation_notes_genetics=s['curation_notes_genetics'],
+                        Panel_ID=d.stem,
                     ))
                 for row in d.read_csv('variables.csv', dicts=True):
                     if row['type']:

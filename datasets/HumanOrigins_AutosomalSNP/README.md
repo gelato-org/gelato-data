@@ -1,6 +1,4 @@
-# Autosomal SNP chip dataset 
-## Human Origins, Affymetrix
-
+# Autosomal SNP chip dataset Human Origins, Affymetrix
 
 The panel of populations analyzed are typed for the Human Origins Array (Affymetrix), a SNP set selected for population history studies and ascertained against the genomic diversity found in 11 individuals from different continents [Patterson et al., 2012](https://doi.org/10.1534/genetics.112.145037). 
 

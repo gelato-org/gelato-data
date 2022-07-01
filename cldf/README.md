@@ -11,7 +11,7 @@ property | value
 [dc:conformsTo](http://purl.org/dc/terms/conformsTo) | [CLDF StructureDataset](http://cldf.clld.org/v1.0/terms.rdf#StructureDataset)
 [dc:license](http://purl.org/dc/terms/license) | https://creativecommons.org/licenses/by/4.0/
 [dcat:accessURL](http://www.w3.org/ns/dcat#accessURL) | https://github.com/gelato-org/gelato-data
-[prov:wasDerivedFrom](http://www.w3.org/ns/prov#wasDerivedFrom) | <ol><li><a href="https://github.com/gelato-org/gelato-data/tree/c97b552">gelato-org/gelato-data c97b552</a></li><li><a href="https://github.com/glottolog/glottolog/tree/v4.6">Glottolog v4.6</a></li></ol>
+[prov:wasDerivedFrom](http://www.w3.org/ns/prov#wasDerivedFrom) | <ol><li><a href="https://github.com/gelato-org/gelato-data/tree/1b4a8d5">gelato-org/gelato-data 1b4a8d5</a></li><li><a href="https://github.com/glottolog/glottolog/tree/v4.6">Glottolog v4.6</a></li></ol>
 [prov:wasGeneratedBy](http://www.w3.org/ns/prov#wasGeneratedBy) | <ol><li><strong>python</strong>: 3.8.10</li><li><strong>python-packages</strong>: <a href="./requirements.txt">requirements.txt</a></li></ol>
 [rdf:ID](http://www.w3.org/1999/02/22-rdf-syntax-ns#ID) | gelato
 [rdf:type](http://www.w3.org/1999/02/22-rdf-syntax-ns#type) | http://www.w3.org/ns/dcat#Distribution
@@ -67,6 +67,7 @@ Name/Property | Datatype | Description
 `curation_notes_linguistics` | `string` | 
 `curation_notes_genetics` | `string` | 
 [Source](http://cldf.clld.org/v1.0/terms.rdf#source) | list of `string` (separated by `;`) | References [sources.bib::BibTeX-key](./sources.bib)
+[Panel_ID](http://cldf.clld.org/v1.0/terms.rdf#contributionReference) | `string` | Populations are defined by a set of samples from a panel.<br>References [panels.csv::ID](#table-panelscsv)
 
 ## <a name="table-variablescsv"></a>Table [variables.csv](./variables.csv)
 
@@ -84,4 +85,22 @@ Name/Property | Datatype | Description
 [Name](http://cldf.clld.org/v1.0/terms.rdf#name) | `string` | 
 [Description](http://cldf.clld.org/v1.0/terms.rdf#description) | `string` | 
 `datatype` | `json` | GeLaTo provides parameters (aka variables) of two types. Functions of *one* population, where values will be atomic measurements like numbers, and functions of a pair of populations, where values are mappings of population IDs to atomic values. The latter is distinguished by a value of `json` in this column and values must be read as JSON objects. The set of values for a variable of the latter type can be interpreted as value matrix, i.e. as values for the cartesian product of the set of populations.
+
+## <a name="table-panelscsv"></a>Table [panels.csv](./panels.csv)
+
+property | value
+ --- | ---
+[dc:conformsTo](http://purl.org/dc/terms/conformsTo) | [CLDF ContributionTable](http://cldf.clld.org/v1.0/terms.rdf#ContributionTable)
+[dc:extent](http://purl.org/dc/terms/extent) | 1
+
+
+### Columns
+
+Name/Property | Datatype | Description
+ --- | --- | --- 
+[ID](http://cldf.clld.org/v1.0/terms.rdf#id) | `string` | Primary key
+[Name](http://cldf.clld.org/v1.0/terms.rdf#name) | `string` | 
+[Description](http://cldf.clld.org/v1.0/terms.rdf#description) | `string` | 
+[Contributor](http://cldf.clld.org/v1.0/terms.rdf#contributor) | `string` | 
+[Citation](http://cldf.clld.org/v1.0/terms.rdf#citation) | `string` | 
 
