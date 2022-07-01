@@ -3,7 +3,7 @@
 
 ### Credits
 
-GeLaTo was created by by Chiara Barbieri, Damián Blasi and Robert Forkel.
+GeLaTo was created by Chiara Barbieri, Damián Blasi and Robert Forkel.
 
 Chiara Barbieri: genetic data curation, population genetics analysis, database assembly. 
 
