@@ -12,7 +12,7 @@ Damián Blasi: conceptualization, project name.
 Robert Forkel: database structure and web implementation in CLDF.
 
 
-![](https://gelato.clld.org/static/gelatauro.png)
+![](docs/gelatauro.jpg)
 
 
 The concept of GeLaTo was developed from conversations at the Department of Linguistic and Cultural Evolution at the Max Planck Institute for the Science of Human History, Jena, Germany, and the dataset was assembled at the University of Zurich.
