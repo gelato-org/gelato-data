@@ -22,7 +22,11 @@ class Dataset(BaseDataset):
     def schema(self, cldf):
         t = cldf.add_component(
             'LanguageTable',
-            'geographicRegion',
+            {
+                'name': 'geographicRegion',
+                'dc:description': "Geographic location of the populations is based on information "
+                                  "on the genetic samples, and not on linguistic information."
+            },
             'country',
             {
                 "name": 'samplesize',
@@ -46,6 +50,12 @@ class Dataset(BaseDataset):
         t.common_props['dc:description'] = \
             "Rows in this table represent genetic population mapped to a language. These " \
             "populations constitute the primary unit of investigation in GeLaTo."
+        cldf['LanguageTable', 'Glottocode'].common_props['dc:description'] = \
+            "Glottocode identifier, which corresponds to the main language spoken by the " \
+            "population. This information is recovered from the original genetic publication, " \
+            "and it is extrapolated either from direct sampling observation, cultural/linguistic " \
+            "self-identification, or geographical characterization, with the assistance of " \
+            "linguists and anthropologists."
         cldf.add_component(
             'ParameterTable',
             {
