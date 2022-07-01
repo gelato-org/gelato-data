@@ -11,7 +11,7 @@ property | value
 [dc:conformsTo](http://purl.org/dc/terms/conformsTo) | [CLDF StructureDataset](http://cldf.clld.org/v1.0/terms.rdf#StructureDataset)
 [dc:license](http://purl.org/dc/terms/license) | https://creativecommons.org/licenses/by/4.0/
 [dcat:accessURL](http://www.w3.org/ns/dcat#accessURL) | https://github.com/gelato-org/gelato-data
-[prov:wasDerivedFrom](http://www.w3.org/ns/prov#wasDerivedFrom) | <ol><li><a href="https://github.com/gelato-org/gelato-data/tree/f5a5837">gelato-org/gelato-data f5a5837</a></li><li><a href="https://github.com/glottolog/glottolog/tree/c63a6bc8d7">Glottolog v4.6-1-gc63a6bc8d7</a></li></ol>
+[prov:wasDerivedFrom](http://www.w3.org/ns/prov#wasDerivedFrom) | <ol><li><a href="https://github.com/gelato-org/gelato-data/tree/0a0a619">gelato-org/gelato-data 0a0a619</a></li><li><a href="https://github.com/glottolog/glottolog/tree/v4.6">Glottolog v4.6</a></li></ol>
 [prov:wasGeneratedBy](http://www.w3.org/ns/prov#wasGeneratedBy) | <ol><li><strong>python</strong>: 3.8.10</li><li><strong>python-packages</strong>: <a href="./requirements.txt">requirements.txt</a></li></ol>
 [rdf:ID](http://www.w3.org/1999/02/22-rdf-syntax-ns#ID) | gelato
 [rdf:type](http://www.w3.org/1999/02/22-rdf-syntax-ns#type) | http://www.w3.org/ns/dcat#Distribution
@@ -56,14 +56,14 @@ Name/Property | Datatype | Description
 [Macroarea](http://cldf.clld.org/v1.0/terms.rdf#macroarea) | `string` | 
 [Latitude](http://cldf.clld.org/v1.0/terms.rdf#latitude) | `decimal` | 
 [Longitude](http://cldf.clld.org/v1.0/terms.rdf#longitude) | `decimal` | 
-[Glottocode](http://cldf.clld.org/v1.0/terms.rdf#glottocode) | `string` | 
+[Glottocode](http://cldf.clld.org/v1.0/terms.rdf#glottocode) | `string` | Glottocode identifier, which corresponds to the main language spoken by the population. This information is recovered from the original genetic publication, and it is extrapolated either from direct sampling observation, cultural/linguistic self-identification, or geographical characterization, with the assistance of linguists and anthropologists.
 [ISO639P3code](http://cldf.clld.org/v1.0/terms.rdf#iso639P3code) | `string` | 
-`geographicRegion` | `string` | 
+`geographicRegion` | `string` | Geographic location of the populations is based on information on the genetic samples, and not on linguistic information.
 `country` | `string` | 
 `samplesize` | `integer` | 
 `Average_SNP_count` | `float` | 
-`glottolog.node1` | `string` | 
-`LanguageFamily` | `string` | 
+`LanguageFamily_Glottocode` | `string` | Glottocode of the top-level language grouping associated with the population. Language isolates have their own glottocode in this column as well.
+`LanguageFamily` | `string` | Name of the top-level language grouping associated with the population.
 `curation_notes_linguistics` | `string` | 
 `curation_notes_genetics` | `string` | 
 [Source](http://cldf.clld.org/v1.0/terms.rdf#source) | list of `string` (separated by `;`) | References [sources.bib::BibTeX-key](./sources.bib)

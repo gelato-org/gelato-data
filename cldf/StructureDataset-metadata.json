@@ -14,13 +14,13 @@
         {
             "rdf:about": "https://github.com/gelato-org/gelato-data",
             "rdf:type": "prov:Entity",
-            "dc:created": "f5a5837",
+            "dc:created": "0a0a619",
             "dc:title": "Repository"
         },
         {
             "rdf:about": "https://github.com/glottolog/glottolog",
             "rdf:type": "prov:Entity",
-            "dc:created": "v4.6-1-gc63a6bc8d7",
+            "dc:created": "v4.6",
             "dc:title": "Glottolog"
         }
     ],
@@ -179,6 +179,7 @@
                         "name": "Longitude"
                     },
                     {
+                        "dc:description": "Glottocode identifier, which corresponds to the main language spoken by the population. This information is recovered from the original genetic publication, and it is extrapolated either from direct sampling observation, cultural/linguistic self-identification, or geographical characterization, with the assistance of linguists and anthropologists.",
                         "datatype": {
                             "base": "string",
                             "format": "[a-z0-9]{4}[1-9][0-9]{3}"
@@ -198,7 +199,7 @@
                         "name": "ISO639P3code"
                     },
                     {
-                        "datatype": "string",
+                        "dc:description": "Geographic location of the populations is based on information on the genetic samples, and not on linguistic information.",
                         "name": "geographicRegion"
                     },
                     {
@@ -214,11 +215,11 @@
                         "name": "Average_SNP_count"
                     },
                     {
-                        "datatype": "string",
-                        "name": "glottolog.node1"
+                        "dc:description": "Glottocode of the top-level language grouping associated with the population. Language isolates have their own glottocode in this column as well.",
+                        "name": "LanguageFamily_Glottocode"
                     },
                     {
-                        "datatype": "string",
+                        "dc:description": "Name of the top-level language grouping associated with the population.",
                         "name": "LanguageFamily"
                     },
                     {

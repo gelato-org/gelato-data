@@ -36,8 +36,17 @@ class Dataset(BaseDataset):
                 "name": 'Average_SNP_count',
                 "datatype": "float",
             },
-            'glottolog.node1',
-            'LanguageFamily',
+            {
+                'name': 'LanguageFamily_Glottocode',
+                'dc:description': "Glottocode of the top-level language grouping associated with "
+                                  "the population. Language isolates have their own glottocode "
+                                  "in this column as well."
+            },
+            {
+                'name': 'LanguageFamily',
+                'dc:description': "Name of the top-level language grouping associated with "
+                                  "the population."
+            },
             'curation_notes_linguistics',
             'curation_notes_genetics',
             {
@@ -76,6 +85,7 @@ class Dataset(BaseDataset):
             "Links a value to a population."
 
     def cmd_makecldf(self, args):
+        glangs = args.glottolog.api.cached_languoids
         self.schema(args.writer.cldf)
         args.writer.cldf.sources = Sources.from_file(self.etc_dir / 'sources.bib')
         popname2id = {}
@@ -85,6 +95,8 @@ class Dataset(BaseDataset):
             if d.is_dir() and d.stem != 'Pemberton_AutosomalSTR':
                 for s in d.read_csv('samples.csv', dicts=True):
                     popname2id[s['PopName']] = s['SamplePopID']
+                    glang = glangs[s['glottocodeBase']]
+                    family = glang.family or glang
                     args.writer.objects['LanguageTable'].append(dict(
                         ID=s['SamplePopID'],
                         Name=s['PopName'],
@@ -96,6 +108,11 @@ class Dataset(BaseDataset):
                         Source=s['publication'].split('&'),
                         Average_SNP_Count=float(s['Average SNP count']),
                         samplesize=int(s['samplesize']),
+                        country=s['country'],
+                        Language_Family_Glottocode=family.id,  # s['glottolog.node1'],
+                        LanguageFamily=family.name,  # s['LanguageFamily'],
+                        curation_notes_linguistics=s['curation_notes_linguistics'],
+                        curation_notes_genetics=s['curation_notes_genetics'],
                     ))
                 for row in d.read_csv('variables.csv', dicts=True):
                     """
@@ -125,6 +142,8 @@ GeneticSplitTime_95,Genetic divergence time 0.95 percentile,Upper 5% confidence 
                             Description=row['Description'],
                             datatype=row['type'],
                         ))
+                    else:
+                        args.log.warning('Skipping untyped variable {}'.format(row['Variable name']))
 
                 for row in d.read_csv('data.csv', dialect=Dialect(lineTerminators=['\r']), dicts=True):
                     #SamplePopID,PopName,
