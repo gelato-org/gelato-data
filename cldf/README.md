@@ -11,7 +11,7 @@ property | value
 [dc:conformsTo](http://purl.org/dc/terms/conformsTo) | [CLDF StructureDataset](http://cldf.clld.org/v1.0/terms.rdf#StructureDataset)
 [dc:license](http://purl.org/dc/terms/license) | https://creativecommons.org/licenses/by/4.0/
 [dcat:accessURL](http://www.w3.org/ns/dcat#accessURL) | https://github.com/gelato-org/gelato-data
-[prov:wasDerivedFrom](http://www.w3.org/ns/prov#wasDerivedFrom) | <ol><li><a href="https://github.com/gelato-org/gelato-data/tree/12a65f1">gelato-org/gelato-data 12a65f1</a></li><li><a href="https://github.com/glottolog/glottolog/tree/v4.6">Glottolog v4.6</a></li></ol>
+[prov:wasDerivedFrom](http://www.w3.org/ns/prov#wasDerivedFrom) | <ol><li><a href="https://github.com/gelato-org/gelato-data/tree/c97b552">gelato-org/gelato-data c97b552</a></li><li><a href="https://github.com/glottolog/glottolog/tree/v4.6">Glottolog v4.6</a></li></ol>
 [prov:wasGeneratedBy](http://www.w3.org/ns/prov#wasGeneratedBy) | <ol><li><strong>python</strong>: 3.8.10</li><li><strong>python-packages</strong>: <a href="./requirements.txt">requirements.txt</a></li></ol>
 [rdf:ID](http://www.w3.org/1999/02/22-rdf-syntax-ns#ID) | gelato
 [rdf:type](http://www.w3.org/1999/02/22-rdf-syntax-ns#type) | http://www.w3.org/ns/dcat#Distribution
@@ -32,7 +32,7 @@ Name/Property | Datatype | Description
 [ID](http://cldf.clld.org/v1.0/terms.rdf#id) | `string` | Primary key
 [Population_ID](http://cldf.clld.org/v1.0/terms.rdf#languageReference) | `string` | Links a value to a population.<br>References [populations.csv::ID](#table-populationscsv)
 [Parameter_ID](http://cldf.clld.org/v1.0/terms.rdf#parameterReference) | `string` | References [variables.csv::ID](#table-variablescsv)
-[Value](http://cldf.clld.org/v1.0/terms.rdf#value) | `string` | 
+[Value](http://cldf.clld.org/v1.0/terms.rdf#value) | `string` | Either a value with an atomic datatype (like number or string) or a JSON serialized mapping of population ID to an atomic value. In the latter case, the corresponding variable is a function f of two populations and a value like {"ID1": 5, "ID2" 7} is to be interpreted as f(row[Population_ID], ID1) = 5 and f(row[Population_ID], ID2) = 7.
 [Code_ID](http://cldf.clld.org/v1.0/terms.rdf#codeReference) | `string` | 
 [Comment](http://cldf.clld.org/v1.0/terms.rdf#comment) | `string` | 
 [Source](http://cldf.clld.org/v1.0/terms.rdf#source) | list of `string` (separated by `;`) | References [sources.bib::BibTeX-key](./sources.bib)

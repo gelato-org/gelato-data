@@ -95,6 +95,11 @@ class Dataset(BaseDataset):
         for fk in cldf['ValueTable'].tableSchema.foreignKeys:
             if fk.columnReference == ['Language_ID']:
                 fk.columnReference = ['Population_ID']
+        cldf['ValueTable', 'Value'].common_props['dc:description'] = \
+            "Either a value with an atomic datatype (like number or string) or a JSON serialized " \
+            "mapping of population ID to an atomic value. In the latter case, the corresponding " \
+            'variable is a function f of two populations and a value like {"ID1": 5, "ID2" 7} is to ' \
+            'be interpreted as f(row[Population_ID], ID1) = 5 and f(row[Population_ID], ID2) = 7.'
 
     def cmd_makecldf(self, args):
         glangs = args.glottolog.api.cached_languoids
