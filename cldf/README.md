@@ -11,7 +11,7 @@ property | value
 [dc:conformsTo](http://purl.org/dc/terms/conformsTo) | [CLDF StructureDataset](http://cldf.clld.org/v1.0/terms.rdf#StructureDataset)
 [dc:license](http://purl.org/dc/terms/license) | https://creativecommons.org/licenses/by/4.0/
 [dcat:accessURL](http://www.w3.org/ns/dcat#accessURL) | https://github.com/gelato-org/gelato-data
-[prov:wasDerivedFrom](http://www.w3.org/ns/prov#wasDerivedFrom) | <ol><li><a href="https://github.com/gelato-org/gelato-data/tree/1b4a8d5">gelato-org/gelato-data 1b4a8d5</a></li><li><a href="https://github.com/glottolog/glottolog/tree/v4.6">Glottolog v4.6</a></li></ol>
+[prov:wasDerivedFrom](http://www.w3.org/ns/prov#wasDerivedFrom) | <ol><li><a href="https://github.com/gelato-org/gelato-data/tree/e8bda79">gelato-org/gelato-data e8bda79</a></li><li><a href="https://github.com/glottolog/glottolog/tree/v4.6">Glottolog v4.6</a></li></ol>
 [prov:wasGeneratedBy](http://www.w3.org/ns/prov#wasGeneratedBy) | <ol><li><strong>python</strong>: 3.8.10</li><li><strong>python-packages</strong>: <a href="./requirements.txt">requirements.txt</a></li></ol>
 [rdf:ID](http://www.w3.org/1999/02/22-rdf-syntax-ns#ID) | gelato
 [rdf:type](http://www.w3.org/1999/02/22-rdf-syntax-ns#type) | http://www.w3.org/ns/dcat#Distribution
@@ -22,7 +22,7 @@ property | value
 property | value
  --- | ---
 [dc:conformsTo](http://purl.org/dc/terms/conformsTo) | [CLDF ValueTable](http://cldf.clld.org/v1.0/terms.rdf#ValueTable)
-[dc:extent](http://purl.org/dc/terms/extent) | 4857
+[dc:extent](http://purl.org/dc/terms/extent) | 4791
 
 
 ### Columns
@@ -58,6 +58,7 @@ Name/Property | Datatype | Description
 [Longitude](http://cldf.clld.org/v1.0/terms.rdf#longitude) | `decimal` | 
 [Glottocode](http://cldf.clld.org/v1.0/terms.rdf#glottocode) | `string` | Glottocode identifier, which corresponds to the main language spoken by the population. This information is recovered from the original genetic publication, and it is extrapolated either from direct sampling observation, cultural/linguistic self-identification, or geographical characterization, with the assistance of linguists and anthropologists.
 [ISO639P3code](http://cldf.clld.org/v1.0/terms.rdf#iso639P3code) | `string` | 
+`Language_Name` | `string` | 
 `geographicRegion` | `string` | Geographic location of the populations is based on information on the genetic samples, and not on linguistic information.
 `country` | `string` | 
 `samplesize` | `integer` | 
@@ -85,6 +86,7 @@ Name/Property | Datatype | Description
 [Name](http://cldf.clld.org/v1.0/terms.rdf#name) | `string` | 
 [Description](http://cldf.clld.org/v1.0/terms.rdf#description) | `string` | 
 `datatype` | `json` | GeLaTo provides parameters (aka variables) of two types. Functions of *one* population, where values will be atomic measurements like numbers, and functions of a pair of populations, where values are mappings of population IDs to atomic values. The latter is distinguished by a value of `json` in this column and values must be read as JSON objects. The set of values for a variable of the latter type can be interpreted as value matrix, i.e. as values for the cartesian product of the set of populations.
+[Panel_ID](http://cldf.clld.org/v1.0/terms.rdf#contributionReference) | `string` | Variables are defined for the set of populations from a panel.<br>References [panels.csv::ID](#table-panelscsv)
 
 ## <a name="table-panelscsv"></a>Table [panels.csv](./panels.csv)
 

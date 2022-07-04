@@ -14,7 +14,7 @@
         {
             "rdf:about": "https://github.com/gelato-org/gelato-data",
             "rdf:type": "prov:Entity",
-            "dc:created": "1b4a8d5",
+            "dc:created": "e8bda79",
             "dc:title": "Repository"
         },
         {
@@ -42,7 +42,7 @@
     "tables": [
         {
             "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#ValueTable",
-            "dc:extent": 4857,
+            "dc:extent": 4791,
             "tableSchema": {
                 "columns": [
                     {
@@ -200,6 +200,10 @@
                         "name": "ISO639P3code"
                     },
                     {
+                        "datatype": "string",
+                        "name": "Language_Name"
+                    },
+                    {
                         "dc:description": "Geographic location of the populations is based on information on the genetic samples, and not on linguistic information.",
                         "name": "geographicRegion"
                     },
@@ -292,6 +296,24 @@
                         "dc:description": "GeLaTo provides parameters (aka variables) of two types. Functions of *one* population, where values will be atomic measurements like numbers, and functions of a pair of populations, where values are mappings of population IDs to atomic values. The latter is distinguished by a value of `json` in this column and values must be read as JSON objects. The set of values for a variable of the latter type can be interpreted as value matrix, i.e. as values for the cartesian product of the set of populations.",
                         "datatype": "json",
                         "name": "datatype"
+                    },
+                    {
+                        "dc:description": "Variables are defined for the set of populations from a panel.",
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#contributionReference",
+                        "name": "Panel_ID"
+                    }
+                ],
+                "foreignKeys": [
+                    {
+                        "columnReference": [
+                            "Panel_ID"
+                        ],
+                        "reference": {
+                            "resource": "panels.csv",
+                            "columnReference": [
+                                "ID"
+                            ]
+                        }
                     }
                 ],
                 "primaryKey": [

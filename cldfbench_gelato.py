@@ -31,6 +31,7 @@ class Dataset(BaseDataset):
     def schema(self, cldf):
         t = cldf.add_columns(
             'LanguageTable',
+            'Language_Name',
             {
                 'name': 'geographicRegion',
                 'dc:description': "Geographic location of the populations is based on information "
@@ -94,6 +95,11 @@ class Dataset(BaseDataset):
                     "the latter type can be interpreted as value matrix, i.e. as values for the "
                     "cartesian product of the set of populations."
             },
+            {
+                "name": "Panel_ID",
+                "dc:description": "Variables are defined for the set of populations from a panel.",
+                "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#contributionReference",
+            }
         )
         lid = cldf['ValueTable', 'languageReference']
         lid.name = 'Population_ID'
@@ -126,9 +132,10 @@ class Dataset(BaseDataset):
                     glang = glangs[s['glottocodeBase']]
                     family = glang.family or glang
                     args.writer.objects['LanguageTable'].append(dict(
-                        ID=s['SamplePopID'],
+                        ID='{}-{}'.format(d.stem, s['SamplePopID']),
                         Name=s['PopName'],
                         Glottocode=s['glottocodeBase'],
+                        Language_Name=glang.name,
                         Latitude=None if s['lat'] == 'NA' else decimal.Decimal(s['lat'].replace(',', '.')),
                         Longitude=None if s['lon'] == 'NA' else decimal.Decimal(s['lon'].replace(',', '.')),
                         geographicRegion=s['geographicRegion'],
@@ -147,37 +154,30 @@ class Dataset(BaseDataset):
                     if row['type']:
                         types[row['VarID']] = Datatype.fromvalue(row['type'])
                         args.writer.objects['ParameterTable'].append(dict(
-                            ID=row['VarID'].replace(' ', '_'),
+                            ID='{}-{}'.format(d.stem, row['VarID'].replace(' ', '_')),
                             Name=row['Variable name'],
                             Description=row['Description'],
                             datatype=row['type'],
+                            Panel_ID=d.stem,
                         ))
                     else:
                         args.log.warning('Skipping untyped variable {}'.format(row['Variable name']))
 
                 for row in d.read_csv('data.csv', dialect=Dialect(lineTerminators=['\r']), dicts=True):
-                    #SamplePopID,PopName,
-                    # Average SNP count,
-                    # medianFST,
-                    # medianFSTregion,
-                    # MedianFSTAdjustedNeighbors,
-                    # numberofNeighborswithin1000km,
-                    # harmonicMean,
-                    # harmonicMean_5perc,
-                    # harmonicMean_95perc
                     for k in row:
                         if k in types:
                             vc += 1
-                            args.writer.objects['ValueTable'].append(dict(
-                                ID=str(vc),
-                                Population_ID=row['SamplePopID'],
-                                Parameter_ID=k.replace(' ', '_'),
-                                Value=row[k],
-                            ))
+                            if row[k] != 'NA':
+                                args.writer.objects['ValueTable'].append(dict(
+                                    ID=str(vc),
+                                    Population_ID='{}-{}'.format(d.stem, row['SamplePopID']),
+                                    Parameter_ID='{}-{}'.format(d.stem, k.replace(' ', '_')),
+                                    Value=row[k],
+                                ))
                 pdata = collections.defaultdict(lambda: collections.defaultdict(dict))
                 for row in d.read_csv('data_pairwise.csv', dialect=Dialect(lineTerminators=['\r']), dicts=True):
                     for k, v in row.items():
-                        if v != 'NA':
+                        if v and v != 'NA':
                             if k in types:
                                 try:
                                     pdata[popname2id[row['Pop2']]][k][popname2id[row['Pop1']]] = float(v)
@@ -205,7 +205,7 @@ class Dataset(BaseDataset):
                         vc += 1
                         args.writer.objects['ValueTable'].append(dict(
                             ID=str(vc),
-                            Population_ID=popId,
-                            Parameter_ID=vid,
+                            Population_ID='{}-{}'.format(d.stem, popId),
+                            Parameter_ID='{}-{}'.format(d.stem, vid),
                             Value=json.dumps(v),
                         ))
