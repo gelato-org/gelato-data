@@ -1,4 +1,4 @@
-#******************************************
+#**#******************************************
 #******************************************
 ### Analysis Paper "A global analysis of matches and mismatches between human genetic and linguistic histories"
 # GeLaTo database
@@ -11,10 +11,11 @@
 
 ### read the two main files
 # list of 397 populations :
-perpopRED<-read.table("PerpopRED_MaMi2022.txt", header = T, sep = "\t", as.is=T)
+perpopRED<-read.table("PerpopRED_MaMi2022_July.txt", header = T, sep = "\t", as.is=T)
+#write.table(perpopRED,"PerpopRED_MaMi2022_July.txt", row.names = F,  sep = "\t", quote = F)
 
 # list of pairwise comparisons :
-FstListinfo<-read.table("FstListREDinfo_MaMi2022.txt", header=T, sep="\t")
+FstListinfo<-read.table("FstListREDinfo_MaMi2022_July.txt", header=T, sep="\t")
 
 
 # color palette for major language families
@@ -24,7 +25,7 @@ MainFamilies<-unlist(labels(Lfamil[which(Lfamil>4)])) # minimum 5 populations pe
 
 sizes<-as.numeric(unlist((Lfamil[which(Lfamil>4)])))
 perpopREDfamily<-perpopRED[which(perpopRED$glottolog.NAME %in% MainFamilies),]
-colorchoice<-c( "darkorange4" ,"#93032E"  ,   "#33A02C"    , "#A6D854"  ,   "#377EB8"  ,   "#E31A1C"   ,  "#FFD92F" ,    "#FF7F00"  ,   "#666666" ,   
+colorchoice<-c( "darkorange4" ,"#93032E"  ,   "#33A02C"    ,"#f27059", "#A6D854"  ,   "#377EB8"  ,   "#E31A1C"   ,  "#FFD92F" ,    "#FF7F00"  ,   "#666666" ,   
                 "cyan4"  ,     "#BC80BD"   ,  "#FED9A6" ,    "tan3" ,       "#6A3D9A" ,    "deeppink"   )
 perpopRED$MainFamilies<-NA
 perpopRED$MainFamilies[which(perpopRED$glottolog.NAME%in%MainFamilies)]<-perpopRED$glottolog.NAME[which(perpopRED$glottolog.NAME%in%MainFamilies)]
@@ -39,7 +40,7 @@ MainFamilies2<-as.data.frame(MainFamilies)
 MainFamilies2$COLOR<-colorchoice
 MainFamilies2$names<-paste0(MainFamilies, " (",sizes, ")" )
 
-MainFamiliesSHORT<-
+
 
 library(ggplot2)
 
@@ -99,9 +100,26 @@ base_plot <- ggplot() +
   geom_point(data = perpopREDSHIFTMAP[which(perpopREDSHIFTMAP$glottolog.NAME%in%large_families),],
              aes(x = lon.1, y = lat.1, color=glottolog.NAME), 
              size = 2, alpha=0.5)+
-  scale_color_manual(values=colorchoice3, labels = MainFamilies3$names)
+  scale_color_manual(values=colorchoice, labels = MainFamilies3$names)
 
-ggsave("WholeGelatoMap_Pacific_LittleCrossesMajorFamilies_largerFig2_2022.pdf", useDingbats=FALSE, width = 8.5, height = 5, dpi = 300, units = "in")
+ggsave("WholeGelatoMap_Pacific_LittleCrossesMajorFamilies_largerFig2_2022_SecondRevision.pdf", useDingbats=FALSE, width = 8.5, height = 5, dpi = 300, units = "in")
+
+
+
+base_plot + 
+  # geom_point(data = perpopREDSHIFTMAP,
+  #                      aes(x = lon.1, y = lat.1), 
+  #                      color="black",shape=3,size=0.5)+ 
+  theme(legend.position="bottom", legend.text=element_text(size=8), legend.title = element_blank())+
+  geom_point(data = perpopREDSHIFTMAP[which(perpopREDSHIFTMAP$glottolog.NAME%in%MainFamilies),],
+             aes(x = lon.1, y = lat.1, color=glottolog.NAME), 
+             size = 2, alpha=0.5)+
+  geom_text(data = perpopREDSHIFTMAP,
+            aes(x = lon.1, y = lat.1, label=PopName), 
+            color="black",size=0.3)+ 
+  scale_color_manual(values=colorchoice, labels = MainFamilies2$names)
+
+ggsave("WholeGelatoMap_Pacific_PopNamesMajorFamilies_largerFig2_2022_SecondRevision.pdf", useDingbats=FALSE, width = 8.5, height = 5, dpi = 300, units = "in")
 
 
 #******************************************
@@ -168,14 +186,12 @@ table(perpopRED$EnclavesMismatch)/nrow(perpopRED)
 table(perpopRED$EnclavesMismatch)
 
 ### table to visualize how many cases
-
 #************************
-## april 2022 
-MATCH                            MISMATCH secondaryMISMATCH_FSTzeroDiffFamily             ZeroSameFamilyNeighbors 
-0.130982368                         0.070528967                         0.005037783                         0.055415617 
-MATCH                            MISMATCH secondaryMISMATCH_FSTzeroDiffFamily             ZeroSameFamilyNeighbors 
-52                                  28                                   2                                  22 
-#************************
+# July 2022
+MATCH                            MISMATCH        secondaryMISMATCH_FSTzeroDiffFamily             ZeroSameFamilyNeighbors 
+0.130982368                         0.068010076                         0.005037783                         0.050377834 
+MATCH                            MISMATCH        secondaryMISMATCH_FSTzeroDiffFamily             ZeroSameFamilyNeighbors 
+52                                  27                                   2                                  20 
 
 
 #Matches
@@ -184,7 +200,7 @@ ListMatches<-perpopRED$PopName [which(perpopRED$EnclavesMismatch=="MATCH")]
 
 ### List of very drifted populations to flag
 DRIFTONI<-perpopRED[which(perpopRED$medianFSTregion>0.1&perpopRED$medianFST>0.1),]$PopName
-> DRIFTONI
+ DRIFTONI
 [1] "Baining_Marabu"      "Chukchi"             "Eskimo_Sireniki"     "Itelmen"             "Ju_hoan_North"      
 [6] "Karitiana"           "Koryak"              "Lahu"                "Nanai"               "Nganasan"           
 [11] "Nganasan_UstAvam"    "Nganasan_Volochanka" "Nivh"                "Onge"                "Rennell_and_Bellona"
@@ -214,13 +230,11 @@ perpopRED$ListEnclaves[which(perpopRED$PopName%in%ListEnclaves)]<-"Enclave"
 #*  different distribution FST closest same family and different family
 #* 
 
-aa<-perpopRED[,c(1, which(colnames(perpopRED)%in%c("glottolog.NAME","closeFstSameFamily","closeFstDIFFFamily" )))] 
 
+perpopRED$difference<-perpopRED$closeFstSameFamily-perpopRED$closeFstDIFFFamily
+length(which(perpopRED$difference>0))/(nrow(perpopRED)-length(which(is.na(perpopRED$difference)))) # only for the comparisons for which i have a same family FST
 
-aa$difference<-aa$closeFstSameFamily-aa$closeFstDIFFFamily
-length(which(aa$difference>0))/(nrow(perpopRED)-length(which(is.na(aa$difference)))) # only for the comparisons for which i have a same family FST
-
-[1] 0.1973333  ## april 2022
+[1] 0.1962865 ## July 2022
 
 # ~20 % of the pops who have another genetic population of the same language family do have closer FST with speakers of another language family
 
@@ -265,7 +279,7 @@ ggplot(testt, aes(x=GeoDistTrue,y= value,  color=variable))+
   ylab("Fst") +
   theme_minimal()+
   facet_wrap(~PopName,scales="free")
-ggsave("Fig1b_toyExamplesEnclaves_2022.pdf",height=2.5,width=8, useDingbats=FALSE)
+ggsave("Fig1b_toyExamplesEnclaves_2022_july.pdf",height=2.5,width=8, useDingbats=FALSE)
 
  
 #******************************************
@@ -320,7 +334,7 @@ perpopRED$MedDiffCIupper<-NA
 perpopRED$MedianWithinSMALLER2<-NA
 perpopRED$MedDiffCI<-NA
 
-for (i in 1:nrow(perpopRED)){
+for (i in 1:nrow(perpopRED)){    # it takes a few minutes to run
   TARGET<-perpopRED$PopName[i]
   meltini<-FstListREDinfo_noDuplicateNeighborsNoDrift[which(FstListREDinfo_noDuplicateNeighborsNoDrift$Pop1==TARGET),]
   meltiniSAME<-meltini[which(meltini$SameFamily=="YES"),]
@@ -351,6 +365,12 @@ length(ListMisaligned)/length(which(!is.na(perpopRED$MedDiff)))
 > length(ListMisaligned)
 [1] 64
 
+## July
+> length(ListMisaligned)/length(which(!is.na(perpopRED$MedDiff)))
+[1] 0.2025316
+> length(ListMisaligned)
+[1] 64
+> 
 
 perpopRED$listSingleCases<-"ND"
 perpopRED$listSingleCases[which(perpopRED$PopName%in%ListEnclaves)]<-"Enclave"
@@ -381,7 +401,7 @@ EnclavesMismatch$MisalignedUpperCI<-NA
 EnclavesMismatch$MisalignedUpperCI<-perpopRED$MedDiffCIupper[match(EnclavesMismatch$PopName,perpopRED$PopName)]
 EnclavesMismatch$MisalignedUpperCI<-EnclavesMismatch$MisalignedUpperCI<0
 
-#  write.table(EnclavesMismatch[order(EnclavesMismatch$geodistDIFFFamily),],"tableSupplEnclaves2022.txt", sep="\t", row.names = F, quote=F) 
+#  write.table(EnclavesMismatch[order(EnclavesMismatch$geodistDIFFFamily),],"tableSupplEnclaves2022_July.txt", sep="\t", row.names = F, quote=F) 
 
 
 
@@ -443,11 +463,11 @@ ggsave("Fig1C_caseStudyMisalignedVIOLIN_YESorNO_2022.pdf", height=3,width=5.5, u
 ############################
 
 # 
-# FstListREDinfo_noDuplicateNeighbors<-FstListinfo[-which(FstListinfo$GEOdist<10&FstListinfo$glottocodeBase1==FstListinfo$glottocodeBase2),]
-# 
-# FstListREDinfo_noDuplicateNeighborsNoDrift<-FstListREDinfo_noDuplicateNeighbors[-c
-#                                                                                 (which(FstListREDinfo_noDuplicateNeighbors$Pop2%in%DRIFTONI), 
-#                                                                                   which(FstListREDinfo_noDuplicateNeighbors$Pop1%in%DRIFTONI)),]
+FstListREDinfo_noDuplicateNeighbors<-FstListinfo[-which(FstListinfo$GEOdist<10&FstListinfo$glottocodeBase1==FstListinfo$glottocodeBase2),]
+
+FstListREDinfo_noDuplicateNeighborsNoDrift<-FstListREDinfo_noDuplicateNeighbors[-c
+                                                                                (which(FstListREDinfo_noDuplicateNeighbors$Pop2%in%DRIFTONI),
+                                                                                  which(FstListREDinfo_noDuplicateNeighbors$Pop1%in%DRIFTONI)),]
 
 #*********************************************
 ### FIGURE 2
@@ -510,8 +530,8 @@ family_distances %>%
   ggplot(aes(y=FstLinear,x=GEOdist))+
   geom_point(aes(fill=SameFamily, size=SameFamily),shape=21, alpha=0.3, stroke=0)+
   geom_point(aes(fill=SameFamily, shape=listSingleCasesPOP1),alpha=0.3,size=3, stroke=0.3)+
-  geom_smooth(aes(group=SameFamily),se=F, color="white", size=2.5)+
-  geom_smooth(aes(color=SameFamily),se=F)+
+  geom_smooth(aes(group=SameFamily),se=F, color="white", size=2.5,method = "gam")+
+  geom_smooth(aes(color=SameFamily),se=F,method = "gam")+
   geom_smooth(color="#FBB13C",linetype = "dotdash",alpha=0.4, size=1, method = lm)+
   facet_wrap(~Family_plot,
              scales="free",
@@ -526,10 +546,209 @@ family_distances %>%
   xlab("Geographic Distance - km") +
   ylab("Linear FST") 
 
-ggsave("Fig2_smoothregressionPlotwithLinear_highlightMismatches_2022.pdf", useDingbats=FALSE, height = 6, width = 10)
+ggsave("Fig2_smoothregressionPlotwithLinear_highlightMismatches_2022_July.pdf", useDingbats=FALSE, height = 6, width = 10)
+# ggsave("Fig2_smoothregressionPlotwithLinear_highlightMismatches_2022.png",  height = 5, width = 10)
 
-ggsave("Fig2_smoothregressionPlotwithLinear_highlightMismatches_2022.png",  height = 5, width = 10)
 
+
+
+#*********************************************
+# JACKKNIFE REVIEWER 1
+#
+# idea from Damian: visualize the smooth regressions for each round of jackknife
+#*********************************************
+#*
+
+library(mgcv)
+FAMmatrixmelt<-c()
+BlocktempTOTAL<-c()
+
+for (i in 1:length(FAM)){ 
+  #  for (i in 4:5){
+  
+  target<-FAM[i]
+  blocktemp<-family_distances2[which(family_distances2$Family_plot==target),]
+  blocktemp<-blocktemp[!is.na(blocktemp$GEOdist),] # eliminate the rows for which i do not have geo coordinated in one of the pops
+  
+  popfam<-blocktemp$Pop1[which(blocktemp$family1==target)] # all the populations included in the comparisons 
+  popfam<-unique(popfam)
+  print(length(popfam))
+  RatioResidualsWithin_JACK<-c()
+  InterceptWithin_JACK<-c()
+  InterceptBEtween_JACK<-c()
+  
+  
+  for (k in 1:length(popfam)){  # here jackknife each population out
+    blocktemp_JACK<-blocktemp[-c(which(blocktemp$Pop1==popfam[k]),which(blocktemp$Pop2==popfam[k])),]
+    
+    mod2gam <- gam(FstLinear ~ s(GEOdist),method = "REML", data=blocktemp_JACK) # the general GAM model 
+    blocktemp_JACK$residuals<-mod2gam$residuals  # add the residuals for each pair of pops according to the general simple model
+    
+    tempWithin<-blocktemp_JACK[which(blocktemp_JACK$SameFamily=="YES"),] # only inside the same Family
+    tempbetween<-blocktemp_JACK[which(blocktemp_JACK$SameFamily=="NO"),] # outside the same Family
+    RatioResidualsWithin_JACK[k]=round(length(which(tempWithin$residuals<0))/nrow(tempWithin),digits = 2)
+    withinGAM <- gam(FstLinear ~ s(GEOdist),method = "REML", data=tempWithin) #  GAM model within family
+    betweenGAM <- gam(FstLinear ~ s(GEOdist),method = "REML", data=tempbetween) # GAM model between family
+    InterceptWithin_JACK[k]<-withinGAM$coefficients[1]
+    InterceptBEtween_JACK[k]<-betweenGAM$coefficients[1]
+    blocktemp_JACKkeep<-blocktemp_JACK[,which(colnames(blocktemp_JACK)%in%c("FstLinear","popslistemp","GEOdist","SameFamily","residuals","FAMILY"))]
+    blocktemp_JACKkeep$PopJack<-popfam[k]
+    blocktemp_JACKkeep$FAM<-target
+    
+    BlocktempTOTAL<-rbind(BlocktempTOTAL,blocktemp_JACKkeep)
+  }
+  
+  FAMmatrixTEMP<-cbind( RatioResidualsWithin_JACK, InterceptWithin_JACK,InterceptBEtween_JACK,popfam) # add the name of the pop that got kicked out at every round of jackknife
+  FAMmatrixTEMP<-as.data.frame(FAMmatrixTEMP)
+  FAMmatrixTEMP$FAM=target
+  FAMmatrixTEMPmelt<-melt(FAMmatrixTEMP, id.vars=c("FAM","popfam" ))
+  FAMmatrixmelt<-rbind(FAMmatrixmelt,FAMmatrixTEMPmelt)
+} 
+
+##############
+write.csv(BlocktempTOTAL,"BlocktempTOTAL.csv")
+write.csv(FAMmatrixmelt,"FAMmatrixmelt.csv")
+##############
+
+BlocktempTOTAL<-read.csv("BlocktempTOTAL.csv")
+FAMmatrixmelt<-read.csv("FAMmatrixmelt.csv")
+
+## plot all the smooth regressions, Damian's idea
+
+BlocktempTOTAL$FAM<-factor(BlocktempTOTAL$FAM, levels=FAM) # force the order when doing facet wrap in the figure
+
+
+a<-ggplot(data=BlocktempTOTAL,aes(y=FstLinear,x=GEOdist, group=PopJack))
+#a+geom_smooth(aes(color=SameFamily),se=F,method = "gam")
+sxa<-a+
+  # geom_smooth(aes(group=SameFamily),se=F, color="white", size=2.5,method = "gam")+
+  geom_line(aes(group=interaction(PopJack, SameFamily), color=SameFamily),se=F,stat="smooth", alpha=0.3)+
+  #  geom_smooth(color="#FBB13C",linetype = "dotdash",alpha=0.4, size=1, se=F,method = lm)+
+  facet_wrap(~FAM,
+             scales="free",
+             nrow=length(FAM)/4)+
+  theme_minimal()+
+  scale_y_sqrt()+
+  scale_fill_manual(values=c("#7FDBEB","#E45B5B"))+
+  scale_color_manual(values=c(blueNO,darkredYES))+
+  theme(legend.position = "bottom", axis.text=element_text(size=7),strip.text = element_text(size = 12))+
+  xlab("Geographic Distance - km") +
+  ylab("Linear FST") 
+
+ggsave("Fig2_smoothregressionPlot_Jackknife.pdf", useDingbats=FALSE, height = 5, width = 10)
+
+#**********************************************************
+#### COOKS DISTANCES
+## script from Balthasar Bickel
+library(tidyverse)
+library(mgcv)
+library(ggrepel)
+
+# Read the distances and clean up:
+# family_distances <-  read.csv('family_distances.csv') %>%
+
+family_distances <-  family_distances %>%
+  
+  select(Fst = FstLinear,
+         distance = GEOdist,
+         SameFamily,
+         Family = Family_plot,
+         type = listSingleCasesPOP1,
+         pair = popslistemp)
+
+# Baseplot from paper:
+ggplot(family_distances,
+       aes(y = Fst, x = distance,
+           color = SameFamily,
+           fill = SameFamily))+
+  geom_point(aes(size=SameFamily), shape=21, alpha=0.3, stroke=0)+
+  # geom_point(aes(shape=listSingleCasesPOP1), alpha=0.3, size=3, stroke=0.3)+
+  geom_smooth(se = T, method = "gam") +
+  facet_wrap(~Family, scales="free", ncol = 4) +
+  theme_minimal()+
+  scale_y_sqrt()+
+  scale_fill_manual(values=c("#7FDBEB","#E45B5B"))+
+  scale_color_manual(values=c("#198B9F","#BA1E1E"))+
+  # scale_shape_manual(" ",values = c(25,23,22))+
+  scale_size_manual(values = c(1,2))+
+  theme(legend.position = "bottom", axis.text=element_text(size=7),strip.text = element_text(size = 12))+
+  xlab("Geographic Distance - km") +
+  ylab("Linear FST")
+
+# Fit the GAMs per family and condition:
+gams <- group_by(family_distances, Family, SameFamily) %>%
+  nest() %>%
+  mutate(model = map(data, function(d) {
+    gam(Fst ~ s(distance, bs = 'cs'),
+        data = d)
+  }
+  ))
+
+# Extract residuals and Cook's D, curtesy of Erik Ringen:
+cooks_gam <- function(model) {
+  eps_sq <- mgcv::residuals.gam(model, type = "scaled.pearson")^2
+  h <- mgcv::influence.gam(model)
+  k <- sum(model$edf) # effective degrees of freedom as approx for num params
+  D <- (eps_sq / (k + 1)) * (h / (1 - h))
+  return(D)
+}
+
+gam_diagnostics.df <- gams %>%
+  mutate(resids = map(model, residuals),
+         cooks = map(model, cooks_gam),
+         # and the subset-specific threshold following the standard 4/N rule:
+         cook4_threshold = 4/map_dbl(data, nrow)) %>%
+  unnest(c(data, resids, cooks)) %>%
+  select(-model)
+
+# Sensitivity analysis: original GAMS without highly influential pairs
+######################################################################
+
+# Counts and proportions:
+
+gam_diagnostics.df$cook4_threshold<-as.numeric(gam_diagnostics.df$cook4_threshold)
+
+group_by(gam_diagnostics.df, Family, SameFamily) %>%
+  summarize(N_influential = sum(cooks > cook4_threshold),
+            Prop_Influential = round(mean(cooks > cook4_threshold),2)) %>%
+  arrange(-Prop_Influential)
+
+# data without the highly influential pairs in each family and condition:
+family_distances_trimmed <-
+  inner_join(family_distances, gam_diagnostics.df) %>%
+  group_by(Family, SameFamily) %>%
+  filter(cooks < cook4_threshold)
+family_distances_trimmed$Family<-factor(family_distances_trimmed$Family, levels=FAM) # force the order when doing facet wrap in the figure
+
+
+SXB<-ggplot(family_distances_trimmed,
+            aes(y = Fst, x = distance,
+                color = SameFamily,
+                fill = SameFamily))+
+  geom_point(aes(size=SameFamily), shape=21, alpha=0.3, stroke=0)+
+  # geom_point(aes(shape=listSingleCasesPOP1), alpha=0.3, size=3, stroke=0.3)+
+  geom_smooth(se = T, method = "gam") +
+  facet_wrap(~Family, scales="free", ncol = 4) +
+  theme_minimal()+
+  scale_y_sqrt()+
+  scale_fill_manual(values=c("#7FDBEB","#E45B5B"))+
+  scale_color_manual(values=c(blueNO,darkredYES))+
+  scale_size_manual(values = c(1,2))+
+  theme(legend.position = "bottom", axis.text=element_text(size=7),strip.text = element_text(size = 12))+
+  xlab("Geographic Distance - km") +
+  ylab("Linear FST")
+
+
+#**********************************************************
+# end of script from Balthasar
+# plot the two parts of jackknife figure S12
+
+library(patchwork)
+patchwork<-sxa / SXB
+patchwork + plot_annotation(tag_levels = 'A')
+
+
+ggsave("FIG_SXX_jackknife_v3.pdf", height = 16, width = 17, useDingbats=FALSE)
 
 
 
@@ -548,6 +767,8 @@ MainFamilies<-unlist(labels(Lfamil[which(Lfamil>4)])) # minimum 5 populations pe
 
 perpopREDfamily<-perpopRED[which(perpopRED$glottolog.NAME %in% MainFamilies),]
 perpopREDfamilynoDrift<-perpopREDfamily[-which(perpopREDfamily$listSingleCases=="Drifted"),]
+perpopREDfamilynoDrift<-perpopREDfamilynoDrift[!is.na(perpopREDfamilynoDrift$MedDiff),]  # exclude the pops for which i cannot calculate the Median Difference betwen Fst betwen-within
+MainFamiliesTEMP<-MainFamilies[which(MainFamilies%in%perpopREDfamilynoDrift$glottolog.NAME)]
 
 perpopREDEnclaves<-perpopRED[which(perpopRED$EnclavesMismatch%in%c("MATCH", "MISMATCH","secondaryMISMATCH_FSTzeroDiffFamily")),]
 
@@ -579,13 +800,15 @@ xlab("Difference Median FST between - within") +
 fst2<-ggplot(perpopREDfamilynoDrift ,aes(MedDiff,MedDiffCI, color=MainFamilies))+
   geom_point(alpha=0.5, size=3,show.legend = FALSE)+
   geom_text_repel(aes(label=PopName, color=MainFamilies), size=0.5, show.legend = FALSE)+
-  scale_color_manual(values = colorchoice)+
+  scale_color_manual(values = MainFamilies2$COLOR[which(MainFamilies2$MainFamilies%in%MainFamiliesTEMP)])+
   theme_light()+ xlab("Difference Median FST between - within") +
   ylab("Confidence Interval median difference") +
   geom_vline(xintercept=0)+
   scale_y_log10()+
-  facet_wrap(~MainFamilies,ncol=6)
-#ggsave("DifferenceMedianLogScaleMajorLangFam.pdf", height = 12, width = 14, useDingbats=FALSE)
+  facet_wrap(~MainFamilies,ncol=5)
+# ggsave("DifferenceMedianLogScaleMajorLangFam_July.pdf", height = 6, width = 14, useDingbats=FALSE)
+
+
 
 # panel B, color code previous enclaves and matches 
 
@@ -607,8 +830,8 @@ fst3<-ggplot(perpopREDnoDrift,aes(MedDiff,MedDiffCI, color=enclavesAgain))+
 library(patchwork)
 patchwork<-(fst1 | fst3) / fst2
 patchwork + plot_annotation(tag_levels = 'A')
-ggsave("DifferenceMedianLogScaleGLOBALandMajorLangFam_3plots_2022.pdf", height = 10, width = 12, useDingbats=FALSE)
-ggsave("DifferenceMedianLogScaleGLOBALandMajorLangFam_3plots_2022.png", height = 10, width = 12, dpi = 150)
+ggsave("DifferenceMedianLogScaleGLOBALandMajorLangFam_3plots_2022_July.pdf", height = 10, width = 12, useDingbats=FALSE)
+# ggsave("DifferenceMedianLogScaleGLOBALandMajorLangFam_3plots_2022.png", height = 10, width = 12, dpi = 150)
 
 
 ########
@@ -644,8 +867,8 @@ base_plot + geom_point(data = perpopREDSHIFTMAP,
 scale_shape_manual(values = c(11,6,5,8,7,0))+
   scale_color_manual(values=colorchoice, labels = MainFamilies2$names)
 
-ggsave("Fig_s10_WholeGelatoMap_Pacific_LittleCrossesMajorFamilies_SingleCases_rightSymbols_2022.pdf", useDingbats=FALSE, width = 14, height = 8, dpi = 300, units = "in")
-ggsave("Fig_s10_WholeGelatoMap_Pacific_LittleCrossesMajorFamilies_SingleCases_rightSymbols_2022.png",  width = 14, height = 8, dpi = 300, units = "in")
+ggsave("Fig_s10_WholeGelatoMap_Pacific_LittleCrossesMajorFamilies_SingleCases_rightSymbols_2022_July.pdf", useDingbats=FALSE, width = 14, height = 8, dpi = 300, units = "in")
+# ggsave("Fig_s10_WholeGelatoMap_Pacific_LittleCrossesMajorFamilies_SingleCases_rightSymbols_2022.png",  width = 14, height = 8, dpi = 300, units = "in")
 
 
 
@@ -680,6 +903,7 @@ popsNumberofNeighbors<-ddply(FstListinfo, "Pop1", function(x) length(which(x$GEO
 freqOneneighbor[i]<-length(which(popsNumberofNeighbors$V1>0))/nrow(perpopRED)
 }
 valuestop<-round(freqOneneighbor*100)
+valuestop
 [1]  57  85  93  98  99 100  # add manually on the violin plot figure
 valuestop<-paste0(valuestop, "%")
 
@@ -691,9 +915,9 @@ valuestop<-paste0(valuestop, "%")
 blockneighborthresholdGeoINFO$threshold[which(blockneighborthresholdGeoINFO$threshold=="500")]<-" 500"
 ga<-ggplot(blockneighborthresholdGeoINFO,aes(x=threshold,y=GeoCloseUnrelated1))
 S3B <-ga+ geom_jitter(shape=16, position=position_jitter(0.2))+
-  geom_violin(trim=FALSE, alpha=0.4)+
-  stat_summary(fun.data="mean_sdl", 
-               geom="pointrange", color="orange")+
+  geom_violin(aes(x=threshold,y=GeoCloseUnrelated1),trim=FALSE, alpha=0.4)+
+  stat_summary(fun="median", 
+               geom="point", color="orange")+
   theme_minimal()+
   theme(axis.title.y = element_text(size = 8)) +
   ylim(0,150)+xlab("Geographic radius in km")+
@@ -766,8 +990,38 @@ S3A + S3B + S3C +
   plot_layout(design = layout)+ plot_annotation(tag_levels = 'A')
 
 
-ggsave("Fig_s03_evaluateIncidenceLanguageFamilies2022.pdf", height = 12, width = 10, useDingbats=FALSE)
-ggsave("Fig_s03_evaluateIncidenceLanguageFamilies2022.png", height = 12, width = 10, dpi = 150)
+ggsave("Fig_s03_evaluateIncidenceLanguageFamilies2022_July.pdf", height = 12, width = 10, useDingbats=FALSE)
+# ggsave("Fig_s03_evaluateIncidenceLanguageFamilies2022.png", height = 12, width = 10, dpi = 150)
+
+
+
+##### analysis of divergence time
+#******************************************
+### Figure S1. compare different methods to calculate genetic divergence times
+#******************************************
+
+
+options(scipen=10000)
+time1<-ggplot(FstListinfo, aes(TMRCA_doubleNe,TMRCA_Bhatia))+
+  geom_point(shape=1)+
+  geom_abline(slope=1, intercept = 0, alpha=0.5, color="red")+
+  xlab("Divergence Time, Nei formula") + ylab("Divergence Time, Bhatia formula")+ 
+  theme_light()
+
+ggsave("ComparisonTMRCADoubleNEwithBhatia.pdf", useDingbats=FALSE, width=5, height = 5)
+
+
+time2<-ggplot(FstListinfo, aes(TMRCA_doubleNe,TMRCA_harmonicNe))+
+  geom_point(shape=1)+
+  geom_abline(slope=1, intercept = 0, alpha=0.5, color="red")+
+  xlab("Divergence Time, Nei formula") + ylab("Divergence Time, harmonic mean of the two Ne")+ 
+  theme_light()
+
+# ggsave("ComparisonTMRCADoubleNEwithHarmonicMEan.pdf", useDingbats=FALSE, width=5, height = 5)
+time1 + time2 + 
+  plot_annotation(tag_levels = 'A')
+
+ggsave("FigS01_comparisonsTMRCA.pdf", useDingbats=FALSE, width=10, height = 5)
 
 
 #******************************************
@@ -791,16 +1045,29 @@ meltFstGlotto_infowithinREgionTMRCA<-meltFstGlotto_infowithinREgionTMRCA[-c(whic
 meltFstGlotto_infowithinREgionTMRCA<-meltFstGlotto_infowithinREgionTMRCA[-c(which(meltFstGlotto_infowithinREgionTMRCA$Pop1%in%DRIFTONI)),]
 meltFstGlotto_infowithinREgionTMRCA$TMRCA_doubleNe<-as.numeric(meltFstGlotto_infowithinREgionTMRCA$TMRCA_doubleNe)
 
-ggplot(meltFstGlotto_infowithinREgionTMRCA, aes(region1, TMRCA_doubleNe))+
+tmrca1<-ggplot(meltFstGlotto_infowithinREgionTMRCA, aes(region1, TMRCA_doubleNe))+
   geom_jitter(shape=16, position=position_jitter(0.2))+
   geom_violin(trim=FALSE, alpha=0.4)+
-  stat_summary(fun.data="mean_sdl", 
-               geom="pointrange", color="orange")+
+  stat_summary(fun="median", 
+               geom="point", color="orange")+
   ylim(0,70000)+xlab("")+ylab("population divergence time, years ago")+
   theme_light() 
-  
 
-ggsave("FigS05_distribTMRCA_ContinentsViolin2022.pdf", useDingbats=FALSE, width=6, height = 4)
+###########
+  # compare with harmonic mean Ne as per reviewer's suggestion 
+
+tmrca2<-ggplot(meltFstGlotto_infowithinREgionTMRCA, aes(region1, TMRCA_harmonicNe))+
+  geom_jitter(shape=16, position=position_jitter(0.2))+
+  geom_violin(trim=FALSE, alpha=0.4)+
+  stat_summary(fun="median", 
+               geom="point", color="orange")+
+  ylim(0,70000)+xlab("")+ylab("population divergence time, years ago")+
+  theme_light() 
+
+tmrca1 / tmrca2 + 
+   plot_annotation(tag_levels = 'A')
+
+ggsave("FigS05_distribTMRCA_ContinentsViolin2022_July.pdf", useDingbats=FALSE, width=6, height = 8)
 
 
 
@@ -920,7 +1187,7 @@ fig6a<-base_plot + geom_point(data = perpopREDSHIFTMAP,
 
 
 ### Supplementary Figure S6A
-#ggsave("MapPairMismatchesPercentileDistribution_until10percentile_2022_.pdf", useDingbats=FALSE, width = 15, height = 8, dpi = 300, units = "in")
+#ggsave("MapPairMismatchesPercentileDistribution_until10percentile_2022_July.pdf", useDingbats=FALSE, width = 15, height = 8, dpi = 300, units = "in")
 
 
 # ***************************************************
@@ -1108,7 +1375,7 @@ matpercentilecolor<-matrix(matFSTpercentilemeltcolor,
                            ncol(matAdjustSizeROUND))
 
 
-pdf("circlize_Mismatches_families_adjustSampleSize_below10percentile2022.pdf", width = 8, height = 8)
+pdf("circlize_Mismatches_families_adjustSampleSize_below10percentile2022_July.pdf", width = 8, height = 8)
 ff<-chordDiagramFromMatrix(matAdjustSizeROUND, directional = 0, 
                            transparency = 0.1, symmetric=T, order = orderspecial, 
                            col=matpercentilecolor,grid.col = grid.col)
@@ -1140,7 +1407,7 @@ perpopREDSHIFTMAP$MedDiff<-as.numeric(perpopREDSHIFTMAP$MedDiff)
                            high="darkblue",  midpoint = 0,  name="Difference FST between/within")+
     # scale_color_gradient2( low="darkred",mid="pink",
     #                        high="blue", midpoint = 0.00, na.value = "grey50", name="")+
-    geom_text(data=perpopREDSHIFTMAP_Mismatched, aes(x = lon.1, y = lat.1,label=PopName), size=0.8)+
+   geom_text_repel(data=perpopREDSHIFTMAP_Mismatched, aes(x = lon.1, y = lat.1,label=PopName), size=0.8)+
     # geom_point(data = perpopREDSHIFTMAP_Mismatched, aes(x = lon.1, y = lat.1), color = "darkred",  size = 1.2, alpha=0.5)+
     xlab("") + ylab("") +
     theme(legend.position="bottom")+
@@ -1314,7 +1581,7 @@ library(patchwork)
 
 patchwork<-S7A / ( diffFST_AFRICA | diffFST_EUR ) / ( diffFST_CAUCASUS | diffFST_OCEANIA)
 patchwork + plot_annotation(tag_levels = 'A')
-ggsave("Fig_S07_combinedMAP_FSTproportion2022.pdf", height = 18, width = 15, useDingbats=FALSE)
+ggsave("Fig_S07_combinedMAP_FSTproportion2022_July.pdf", height = 18, width = 15, useDingbats=FALSE)
 ggsave("Fig_S07_combinedMAP_FSTproportion2022.png", height = 22, width = 18)
 
 #***************************************************
@@ -1405,6 +1672,28 @@ AZERBAJAN<- agg+ geom_label_repel( aes(GEOdist,FstLinear, color=family2,label=Po
   ggtitle("Azeri_Azerbajan")+
   scale_color_manual(values = colorispecial)+ theme_light()+
   labs(colour="Language Family")
+
+
+#***************************************************
+# Kalmyk
+
+Kalmyk<-FstListinfo[c(which(FstListinfo$Pop1=="Kalmyk")),]
+
+selectionKalm<-Kalmyk[order(Kalmyk$FstLinear),][1:30,]
+
+colorispecial<-  MainFamilies2$COLOR[match(  names(table(selectionKalm$family2)),
+                                             MainFamilies2$MainFamilies)]
+colorispecial[ is.na(colorispecial)]<-c("gray80")
+# special color code including minor language families in grayscale
+
+agg<-ggplot(selectionKalm)
+
+Kalmyk<- agg+ geom_label_repel( aes(GEOdist,FstLinear, color=family2,label=Pop2), size=3, label.padding=0.1)+
+  geom_point(aes(GEOdist,FstLinear, color=family2))+
+  ggtitle("Kalmyk")+
+  scale_color_manual(values = colorispecial)+ theme_light()+
+  labs(colour="Language Family")
+
 
 
 #***************************************************
@@ -1547,6 +1836,72 @@ ggsave("Fig3_TimeDepth_red_withEnclaves_reducedSet_withLegend_noJitter2022.pdf",
 ggsave("Fig3_TimeDepth_red_withEnclaves_reducedSet_withLegend_noJitter2022.png",  height =6, width = 9, units = "in")
 
 
+####################
+#### Harmonic mean Ne
+FIG3_harm<-
+time_depths %>% 
+  ggplot(aes(y=TMRCA_harmonicNe,x=FAMILY,shape=listSingleCasesPOP,  color=FAMILY))+
+  #ggplot(time_depths, aes(y=TMRCA_doubleNe,x=FAMILY,shape=listSingleCasesPOP))+
+  # geom_jitter(alpha=0.7, width = 0.15, size=4)+
+  geom_point(alpha=0.7, width = 0.15, size=4, color=darkredYES)+
+  coord_flip()+
+  theme_minimal()+
+  # geom_point(aes( shape=listSingleCasesPOP),alpha=0.6,size=3, stroke=0.9)+  # different shape for pairs with an enclave
+  scale_shape_manual("", values = c(25,23,22, 19))+
+  
+  # scale_color_manual(values = MainFamilies2$COLOR[which(MainFamilies2$MainFamilies%in%famtemp)])+
+  theme(legend.position = "none",
+        axis.text = element_text(size=14,color="black"),
+        # axis.text.x = element_text(angle = 45, vjust=1, hjust=1, size = 10),
+        axis.text.x = element_text( size = 8),
+        panel.grid.minor = element_blank())+
+  scale_x_discrete(limits=rev, labels=rev(famtempnames))+
+  scale_y_sqrt(breaks=c(100,500,1000,2000, 3000, 4000,5000,10000,20000,40000))+
+  labs(x="",y="")+ guides(color = FALSE, size = FALSE) +
+  #manually annotate time from Generalized Bayesian Dating 
+  annotate(geom="segment",y = 2495,yend=4632,x=1,xend=1,
+           size=10,alpha=0.3,color="gray55")+  # Uralic
+  annotate(geom="segment",y = 2396,yend=4199,x=2,xend=2,
+           size=10,alpha=0.3,color="gray55")+
+  annotate(geom="segment",y = 1811,yend=2594,x=3,xend=3,
+           size=10,alpha=0.3,color="gray55")+
+  annotate(geom="segment",y = 2446,yend=4426,x=4,xend=4,
+           size=10,alpha=0.3,color="gray55")+
+  annotate(geom="segment",y = 1236,yend=2288,x=5,xend=5,
+           size=10,alpha=0.3,color="gray55")+
+  annotate(geom="segment",y = 3074,yend=7213,x=6,xend=6,
+           size=10,alpha=0.3,color="gray55")+
+  annotate(geom="segment",y = 3314,yend=8831,x=7,xend=7,
+           size=10,alpha=0.3,color="gray55")+
+  annotate(geom="segment",y = 2469,yend=4546,x=8,xend=8,
+           size=10,alpha=0.3,color="gray55")+
+  annotate(geom="segment",y = 2897,yend=6626,x=9,xend=9,
+           size=10,alpha=0.3,color="gray55") + # Afro-Asiatic
+  #manually annotate time from Historical linguistic evidence
+  annotate(geom="segment", linetype=typedosh, y = 4000,yend=5000,x=1-dodg,xend=1-dodg,
+           size=sizetemp,alpha=0.8,color=coloretemp)+ #Uralic
+  annotate(geom="segment", linetype=typedosh, y = 6000,yend=7000,x=1-dodg,xend=1-dodg,
+           size=sizetemp,alpha=0.8,color=coloretemp)+ # uralic again
+  annotate(geom="segment", linetype=typedosh, y = 2000,yend=2500,x=2-dodg,xend=2-dodg,
+           size=sizetemp,alpha=0.8,color=coloretemp)+ # Turkic
+  annotate(geom="segment", linetype=typedosh, y = 1000,yend=2000,x=3-dodg,xend=3-dodg,
+           size=sizetemp,alpha=0.8,color=coloretemp)+ # Quechua
+  annotate(geom="segment", linetype=typedosh, y = 2000,yend=4000,x=5-dodg,xend=5-dodg,
+           size=sizetemp,alpha=0.8,color=coloretemp)+ # Khoe
+  annotate(geom="segment", linetype=typedosh, y = 5500,yend=6500,x=6-dodg,xend=6-dodg,
+           size=sizetemp,alpha=0.8,color=coloretemp)+ # IE
+  annotate(geom="segment", linetype=typedosh, y = 7500,yend=8500,x=6-dodg,xend=6-dodg,
+           size=sizetemp,alpha=0.8,color=coloretemp)+ # IE again
+  annotate(geom="segment", linetype=typedosh, y = 5000,yend=6000,x=7-dodg,xend=7-dodg,
+           size=sizetemp,alpha=0.8,color=coloretemp)+ # Austronesian
+  annotate(geom="segment",linetype=typedosh,y = 4000,yend=5000,x=8-dodg,xend=8-dodg,
+           size=sizetemp,alpha=0.8,color=coloretemp)+ # Bantu
+  annotate(geom="segment",linetype=typedosh,y = 4000,yend=11000,x=9-dodg,xend=9-dodg,
+           size=sizetemp,alpha=0.8,color=coloretemp) # Afro-Asiatic
+
+
+# ggsave("FigS12A_divergenceTimeMajorFam_harmonic.pdf", useDingbats=FALSE, height =12, width = 18, units = "cm")
+
 # ---------------------------------------------------------
 #### the distribution of divergence time for all language families, plus drifted 
 #### Figure supplementary S11
@@ -1599,10 +1954,10 @@ MainFamilies3$COLOR[is.na(MainFamilies3$COLOR)]<-"Gray50"
 rownames(MainFamilies3)<-as.character(MainFamilies3$MainFamilies)
 MainFamilies3<-MainFamilies3[famtemp,]
 
-time_depths %>% 
+FIGS12B<-time_depths %>% 
   # ggplot(aes(y=TMRCA_doubleNe,x=FAMILY,color=FAMILY))+
   ggplot(aes(y=TMRCA_doubleNe,x=FAMILY,shape=listSingleCasesPOP, color=FAMILY))+
-  geom_jitter(alpha=0.7, width = 0.2)+
+  geom_point(alpha=0.7, size=3)+
   coord_flip()+
   theme_minimal()+
   #geom_point(aes( shape=listSingleCasesPOP),alpha=0.6,size=3, stroke=0.9)+  # different shape for pairs with an enclave
@@ -1617,8 +1972,14 @@ time_depths %>%
   scale_y_sqrt(breaks=c(100,500,1000,2000, 3000, 4000,5000,10000,20000,40000))+
   labs(x="",y="")
 
-ggsave("FigS11_TimeDepth_color_withEnclavesandDrifted_rightSymbols_allFamilies2022.png",  height =6, width = 8, units = "in")
-ggsave("FigS11_TimeDepth_color_withEnclavesandDrifted_rightSymbols_allFamilies2022.pdf", useDingbats=FALSE, height =6, width = 8, units = "in")
+# ggsave("FigS12_TimeDepth_color_withEnclavesandDrifted_rightSymbols_allFamilies2022.png",  height =6, width = 8, units = "in")
+# ggsave("FigS12_TimeDepth_color_withEnclavesandDrifted_rightSymbols_allFamilies2022.pdf", useDingbats=FALSE, height =6, width = 8, units = "in")
+
+# fig S21 patchwork
+
+patchwork<- FIG3_harm / FIGS12B
+patchwork + plot_annotation(tag_levels = 'A')
+ggsave("FigS12_timescaleFamilies_2panels.pdf", height = 12, width = 12, useDingbats=FALSE)
 
 
 #*************************************************
@@ -1802,7 +2163,7 @@ ggg+ geom_jitter(shape=16, position=position_jitter(0.2))+
   scale_x_discrete(labels=c("Closest to\nLinguistically unrelated", "Match", "Mismatch", "Proportion\nAligned",
                             "Proportion\nMisaligned"))+
   theme_minimal()
-ggsave("FIG_SX_RESAMPLING.pdf", height=4,width=5.5, useDingbats=FALSE)
+ggsave("FIG_SX_RESAMPLING_July.pdf", height=4,width=5.5, useDingbats=FALSE)
 
 
 

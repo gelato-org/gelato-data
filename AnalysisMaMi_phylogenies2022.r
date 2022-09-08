@@ -16,10 +16,10 @@
 
 ### read the two main files
 # list of 404 populations :
-perpopRED<-read.table("PerpopRED_MaMi2022.txt", header = T, sep = "\t", as.is=T)
+perpopRED<-read.table("PerpopRED_MaMi2022_July.txt", header = T, sep = "\t", as.is=T)
 
 # list of pairwise comparisons :
-FstListinfo<-read.table("FstListREDinfo_MaMi2022.txt", header=T, sep="\t")
+FstListinfo<-read.table("FstListREDinfo_MaMi2022_July.txt", header=T, sep="\t")
 
 
 # color palette for major language families
@@ -28,7 +28,7 @@ Lfamil<-table(perpopRED$glottolog.NAME)
 MainFamilies<-unlist(labels(Lfamil[which(Lfamil>4)])) # minimum 5 populations per Lang Family
 sizes<-as.numeric(unlist((Lfamil[which(Lfamil>4)])))
 perpopREDfamily<-perpopRED[which(perpopRED$glottolog.NAME %in% MainFamilies),]
-colorchoice<-c( "darkorange4" ,"#93032E"  ,   "#33A02C"    , "#A6D854"  ,   "#377EB8"  ,   "#E31A1C"   ,  "#FFD92F" ,    "#FF7F00"  ,   "#666666" ,   
+colorchoice<-c( "darkorange4" ,"#93032E"  ,   "#33A02C"    ,"#f27059", "#A6D854"  ,   "#377EB8"  ,   "#E31A1C"   ,  "#FFD92F" ,    "#FF7F00"  ,   "#666666" ,   
                 "cyan4"  ,     "#BC80BD"   ,  "#FED9A6" ,    "tan3" ,       "#6A3D9A" ,    "deeppink"   )
 MainFamilies2<-as.data.frame(MainFamilies)
 MainFamilies2$COLOR<-colorchoice
@@ -109,7 +109,7 @@ write.tree(alberoLang,paste0(TARGETFamily ,"alberoLangPhylo4.phy")) # manually c
 #* Hrushka 2015
 #*  
 
-TARGETFamily<-"Turkic"
+TARGETFamily<-("Turkic")
 
 listAUS<-unique(perpopRED$Hruschka2015)
 listAUS<-listAUS[-which(listAUS=="0")]
@@ -135,6 +135,7 @@ write.tree(alberoLang,paste0(TARGETFamily ,"alberoLangPhylo4.phy"))
 
 #########
 
+ThreeFamilies<- c("Indo-European" ,"Austronesian","Turkic")
 
 
 library("reshape")
@@ -145,7 +146,7 @@ library("phytools")
 library("phylogram")
 
 my.max <- function(x) ifelse( !all(is.na(x)), max(x, na.rm=T), NA)
-meltFstREDinfo$threefamiliesNEW<-NA
+meltFstREDinfo$threefamilies<-NA
 
 ### LOOP for each of the 3 lang families
 
@@ -443,7 +444,6 @@ returnglotto<-function(x){taxaAUS$glottocode[match(x,taxaAUS$taxon)]}
 ie_AUSTR.df$nodesGlotto<-lapply(listsplit, returnglotto)
 # ie_AUSTR.df$nodesGlotto<-lapply(ie_AUSTR.df$nodesGlotto, as.character)
 
-get_smallest_clade_age("Rennellese", "Ogan",ie_AUSTR.df )
 
 # listaglot<-unique(levels(ie_AUSTR.df$node[[1]]))
 
@@ -503,6 +503,32 @@ AUSTR<-gg+
 # ggtitle(meltFstREDGray2009$FAMILY[1])+theme(plot.title = element_text(color = colorino))
 
 # ggsave("correlationTimeGray2009_Austronesian_noOutlierMamanwa_RennellBelloneMINI_doubleBAR.pdf", useDingbats=FALSE, height = 5, width = 5)
+
+
+# now with harmonic Ne as per reviewer's suggestion
+maxTMRCA<-20000
+meltFstREDGray2009$TMRCA_harmonicNe_95[which(meltFstREDGray2009$TMRCA_harmonicNe_95>maxTMRCA)]<-maxTMRCA
+meltFstREDGray2009<-meltFstREDGray2009[which(meltFstREDGray2009$case=="single"),] # don't need double values to plot
+
+colorino<-MainFamilies2$COLOR[which(MainFamilies2$MainFamilies==meltFstREDGray2009$FAMILY[1])]
+
+gg<-ggplot(meltFstREDGray2009,aes(LinguisticDivergenceTime_median,TMRCA_harmonicNe))
+AUSTR_harm<-gg+
+  ylim(0,20000)+
+  xlim(0,6000)+
+  geom_errorbar(aes(ymin=TMRCA_harmonicNe_5, ymax=TMRCA_harmonicNe_95,),size=3,width=3,
+                alpha=0.1)+
+  geom_errorbarh(aes(xmin=LinguisticDivergenceTime_lower, xmax=LinguisticDivergenceTime_upper),size=3,height=3,
+                 alpha=0.1)+
+  
+  geom_point(size=3,alpha=0.7, fill=colorino, shape=21, color="black")+
+  # geom_text(aes(label=popslistemp), size=1)+
+  xlab("Time distance from language tree - years ago")+
+  ylab("Time distance from genetic data - years ago")+
+  geom_abline(slope=1, intercept = 0, alpha=0.5)+theme_light()
+# ggtitle(meltFstREDGray2009$FAMILY[1])+theme(plot.title = element_text(color = colorino))
+
+# gg
 
 # #****************************************
 # # INDO EUROPEAN
@@ -592,6 +618,30 @@ BOUCKAERT<-gg+
 # ggtitle(TARGETFamily)+theme(plot.title = element_text(color = colorino))
 
 # ggsave("correlationTimeBouckaertIE_noSardiniaMINI_doubleBAR.pdf", useDingbats=FALSE, height = 5, width = 5)
+
+
+## with the Harmonic mean of the 2 Ne Divergence Time, as Reviewer's suggestion
+
+meltFstREDBouckaert$TMRCA_harmonicNe_95[which(meltFstREDBouckaert$TMRCA_harmonicNe_95>maxTMRCA)]<-maxTMRCA
+meltFstREDBouckaert<-meltFstREDBouckaert[which(meltFstREDBouckaert$case=="single"),] # don't need double values to plot
+
+
+gg<-ggplot(meltFstREDBouckaert,aes(LinguisticDivergenceTime_median,TMRCA_harmonicNe))
+BOUCKAERT_Harm<-gg+
+  xlim(0,7500)+
+  ylim(0,maxTMRCA)+
+  geom_errorbar(aes(ymin=TMRCA_harmonicNe_5, ymax=TMRCA_harmonicNe_95,),size=3,width=3,
+                alpha=0.1)+
+  geom_errorbarh(aes(xmin=LinguisticDivergenceTime_lower, xmax=LinguisticDivergenceTime_upper),size=3,height=3,
+                 alpha=0.1)+
+  
+  geom_point(size=3,alpha=0.7, fill=colorino, shape=21, color="black")+
+  # geom_text(aes(label=popslistemp), size=1)+
+  xlab("Time distance from language tree - years ago")+
+  ylab("Time distance from genetic data - years ago")+
+  geom_abline(slope=1, intercept = 0, alpha=0.5)+theme_light()
+# ggtitle(TARGETFamily)+theme(plot.title = element_text(color = colorino))
+
 
 
 #******************************************
@@ -714,6 +764,27 @@ HRUS<-gg+
 #  ggtitle(TARGETFamily)+theme(plot.title = element_text(color = colorino))
 
 # ggsave("correlationTimeturkicMINI_doubleBAR.pdf", useDingbats=FALSE, height = 5, width = 5)
+#*******
+# with the harmonic Ne as per Reviewer's suggestion
+meltFstREDHrushka$TMRCA_harmonicNe_95[which(meltFstREDHrushka$TMRCA_harmonicNe_95>maxTMRCA)]<-maxTMRCA
+meltFstREDHrushka<-meltFstREDHrushka[which(meltFstREDHrushka$case=="single"),] # don't need double values to plot
+colorino<-MainFamilies2$COLOR[which(MainFamilies2$MainFamilies==meltFstREDHrushka$FAMILY[1])]
+
+gg<-ggplot(meltFstREDHrushka,aes(LinguisticDivergenceTime_median,TMRCA_harmonicNe))
+
+HRUS_Harmonic<-gg+
+  xlim(0,3000)+
+  
+  geom_errorbar(aes(ymin=TMRCA_harmonicNe_5, ymax=TMRCA_harmonicNe_95,),size=3,width=3,
+                alpha=0.1)+
+  geom_errorbarh(aes(xmin=LinguisticDivergenceTime_lower, xmax=LinguisticDivergenceTime_upper),size=3,height=3,
+                 alpha=0.1)+
+  
+  geom_point(size=3,alpha=0.7, fill=colorino, shape=21, color="black")+
+  # geom_text(aes(label=popslistemp), size=1)+
+  xlab("Time distance from language tree - years ago")+
+  ylab("Time distance from genetic data - years ago")+
+  geom_abline(slope=1, intercept = 0, alpha=0.5)+theme_light()
 
 
 #******************************************
@@ -757,10 +828,18 @@ SAVAL<-gg+
 #*****************************************************
 #*
 library(ggpubr)
-ggarrange(BOUCKAERT, AUSTR, HRUS  + rremove("x.text"), 
+ggarrange(BOUCKAERT, AUSTR, HRUS, 
           labels = c("D", "E", "F"),
           ncol = 1, nrow = 3)
-ggsave("combined3LangFamiliesCorrelation_Fig4_2022.pdf", useDingbats=FALSE, height = 12, width = 4)
+ggsave("combined3LangFamiliesCorrelation_Fig4_2022_July.pdf", useDingbats=FALSE, height = 12, width = 4)
+
+
+# variation with harmonic Ne sum
+ggarrange(BOUCKAERT_Harm, AUSTR_harm, HRUS_Harmonic, 
+          labels = c("A", "B", "C"),
+          ncol = 3, nrow = 1)
+ggsave("combined3LangFamiliesCorrelation_harmonic.pdf", useDingbats=FALSE, height = 4, width = 12)
+
 
 #*****************************************************
 ## SUPPLEMENTARY COMPARISON CHANG AND SAVALYEV
