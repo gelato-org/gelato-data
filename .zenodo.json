@@ -1,0 +1,70 @@
+{
+    "title": "GEnes and LAnguages TOgether",
+    "access_right": "open",
+    "keywords": [
+        "cldf:StructureDataset",
+        "linguistics"
+    ],
+    "upload_type": "dataset",
+    "license": {
+        "id": "CC-BY-4.0"
+    },
+    "creators": [
+        {
+            "name": "Chiara Barbieri"
+        },
+        {
+            "name": "Dami\u00e1n Blasi"
+        },
+        {
+            "name": "Robert Forkel"
+        }
+    ],
+    "contributors": [
+        {
+            "name": "Chiara Barbieri",
+            "type": "Researcher"
+        },
+        {
+            "name": "Dami\u00e1n Blasi",
+            "type": "Researcher"
+        },
+        {
+            "name": "Robert Forkel",
+            "type": "DataCurator"
+        },
+        {
+            "name": "Epifan\u00eda Arango-Isaza",
+            "type": "Researcher"
+        },
+        {
+            "name": "Alexandros G. Sotiropoulos",
+            "type": "Researcher"
+        },
+        {
+            "name": "Harald Hammarstr\u00f6m",
+            "type": "Researcher"
+        },
+        {
+            "name": "S\u00f8ren Wichmann",
+            "type": "Researcher"
+        },
+        {
+            "name": "Simon J. Greenhill",
+            "type": "Researcher"
+        },
+        {
+            "name": "Russell D. Gray",
+            "type": "Researcher"
+        },
+        {
+            "name": "Balthasar Bickel",
+            "type": "Researcher"
+        },
+        {
+            "name": "Kentaro K. Shimizu",
+            "type": "Researcher"
+        }
+    ],
+    "description": "<p>Cite the source of the dataset as:</p>\n\n<blockquote>\n<p>Barbieri et al. in press</p>\n</blockquote>"
+}

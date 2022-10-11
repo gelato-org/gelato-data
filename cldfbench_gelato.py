@@ -3,12 +3,12 @@ import decimal
 import pathlib
 import collections
 
-from cldfbench import Dataset as BaseDataset, CLDFSpec, CLDFWriter
+from cldfbench import Dataset as BaseDataset, CLDFSpec
 from pycldf.sources import Sources
 from csvw import Datatype
 from csvw.dsv_dialects import Dialect
 
-
+from cldfbench.metadata import Metadata
 class Dataset(BaseDataset):
     dir = pathlib.Path(__file__).parent
     id = "gelato"
@@ -161,7 +161,7 @@ class Dataset(BaseDataset):
                             Panel_ID=d.stem,
                         ))
                     else:
-                        args.log.warning('Skipping untyped variable {}'.format(row['Variable name']))
+                        args.log.warning('Skipping untyped variable "{}"'.format(row['Variable name']))
 
                 for row in d.read_csv('data.csv', dialect=Dialect(lineTerminators=['\r']), dicts=True):
                     for k in row:
@@ -179,24 +179,15 @@ class Dataset(BaseDataset):
                     for k, v in row.items():
                         if v and v != 'NA':
                             if k in types:
-                                try:
-                                    pdata[popname2id[row['Pop2']]][k][popname2id[row['Pop1']]] = float(v)
-                                except:
-                                    print(k, v)
-                                    print(row)
-                                    raise
+                                pdata[popname2id[row['Pop2']]][k][popname2id[row['Pop1']]] = float(v)
                     #Pop2,Pop1,
                     # FST,
                     # case,
-
                     # popslistemp,
-
                     # GEOdist,
                     # FstLinear,
-
                     # FAMILY,
                     # REGION,
-
                     # GeneticSplitTime,
                     # GeneticSplitTime_5,
                     # GeneticSplitTime_95

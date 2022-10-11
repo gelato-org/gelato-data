@@ -77,7 +77,7 @@ HumanOrigins_AutosomalSNP-75,Daur,,48.497534,124,daur1238,,Dagur,EURASIA,China,9
 HumanOrigins_AutosomalSNP-76,Dinka,,8.783333,27.4,dink1262,,Dinka,AFRICA,Sudan,10,594160.5,nilo1247,Nilotic,automatically assigned by Robert F,,LazaridisNature2014,HumanOrigins_AutosomalSNP
 HumanOrigins_AutosomalSNP-77,Druze,,32,35,sout3123,,South Levantine Arabic,EURASIA,Israel,42,595536.0,afro1255,Afro-Asiatic,general check ok,,PattersonGenetics2012,HumanOrigins_AutosomalSNP
 HumanOrigins_AutosomalSNP-78,Dungan,,41.3,69.27,dung1253,,Dungan,EURASIA,Uzbekistan,13,589077.0,sino1245,Sino-Tibetan,assigned by Chiara,,Jeong_2019,HumanOrigins_AutosomalSNP
-HumanOrigins_AutosomalSNP-79,Dusun,,4.71,114.67,dusu1277,,Dusunic,SOUTHEAST_ASIA,Brunei,10,590464.5,aust1307,Austronesian,checked by Chiara,,SkoglundNature2016,HumanOrigins_AutosomalSNP
+HumanOrigins_AutosomalSNP-79,Dusun,,4.71,114.67,brun1245,,Brunei Bisaya-Dusun,SOUTHEAST_ASIA,Brunei,10,590464.5,aust1307,Austronesian,checked by Chiara,,SkoglundNature2016,HumanOrigins_AutosomalSNP
 HumanOrigins_AutosomalSNP-80,Egyptian1,,31.12,30.96,egyp1253,,Egyptian Arabic,AFRICA,Egypt,11,596723.0,afro1255,Afro-Asiatic,automatically assigned by Robert F,,LazaridisNature2014,HumanOrigins_AutosomalSNP
 HumanOrigins_AutosomalSNP-81,Egyptian2,,30.173625,31.234131,egyp1253,,Egyptian Arabic,AFRICA,Egypt,7,596500.0,afro1255,Afro-Asiatic,automatically assigned by Robert F,,LazaridisNature2014,HumanOrigins_AutosomalSNP
 HumanOrigins_AutosomalSNP-82,English_Cornwall,,50.03,-4.9,stan1293,,English,EURASIA,GreatBritain,5,596301.0,indo1319,Indo-European,correct by Chiara,,LazaridisNature2014,HumanOrigins_AutosomalSNP
@@ -174,7 +174,7 @@ HumanOrigins_AutosomalSNP-172,Khakass_Kachins,,55,89,kach1278,,Kacha,EURASIA,Rus
 HumanOrigins_AutosomalSNP-173,Khakass_Koibals,,53,90,khak1248,,Khakas,EURASIA,Russia,6,588926.0,turk1311,Turkic,automatically assigned by Robert F,,Jeong_2019,HumanOrigins_AutosomalSNP
 HumanOrigins_AutosomalSNP-174,Khakass_Sagai,,55,89,saga1260,,Sagai,EURASIA,Russia,6,582297.5,turk1311,Turkic,automatically assigned by Robert F,,Jeong_2019,HumanOrigins_AutosomalSNP
 HumanOrigins_AutosomalSNP-175,Khamnegan,,50.68,114.6,kham1281,,Khamnigan Mongol,EURASIA,Russia,10,586625.0,mong1349,Mongolic-Khitan,assigned by Chiara,,Jeong_2019,HumanOrigins_AutosomalSNP
-HumanOrigins_AutosomalSNP-176,Kharia,,25.77,82.73,khar1283,,Kharia Thar,EURASIA,India,12,595951.5,indo1319,Indo-European,automatically assigned by Robert F,,LazaridisNature2014,HumanOrigins_AutosomalSNP
+HumanOrigins_AutosomalSNP-176,Kharia,,25.77,82.73,khar1287,,Kharia,EURASIA,India,12,595951.5,aust1305,Austroasiatic,checked by Harald,,LazaridisNature2014,HumanOrigins_AutosomalSNP
 HumanOrigins_AutosomalSNP-177,Khomani,,-28.25,21.15,nuuu1241,,Ghaap-Kalahari,AFRICA,SouthAfrica,11,596068.0,tuuu1241,Tuu,automatically assigned by Robert F,,LazaridisNature2014,HumanOrigins_AutosomalSNP
 HumanOrigins_AutosomalSNP-178,Khwe,,-18.373452,21.885095,kxoe1243,,Kxoe,AFRICA,Botswana,10,595042.5,khoe1240,Khoe-Kwadi,correct by AM Fehn,,PickrellNatureCommunications2012,HumanOrigins_AutosomalSNP
 HumanOrigins_AutosomalSNP-179,KichwaOrellana,,-0.183278,-77.174667,tena1240,,Tena Lowland Quichua,AMERICAS,Ecuador,17,596491.0,quec1387,Quechuan,correct by Chiara,,Barbieri_2018,HumanOrigins_AutosomalSNP
@@ -207,7 +207,7 @@ HumanOrigins_AutosomalSNP-205,Luo,,-0.1,34.3,luok1236,,Luo (Kenya and Tanzania),
 HumanOrigins_AutosomalSNP-206,Luya,,-6.191162,-77.968099,chac1250,,Chachapoyas Quechua,AMERICAS,Peru,11,596086.0,quec1387,Quechuan,correct by Chiara checked by P.Heggarty,,Barbieri_2018,HumanOrigins_AutosomalSNP
 HumanOrigins_AutosomalSNP-207,Madak,,-3.1,151.7,mada1285,,Madak,OCEANIA,Papua_New_Guinea,10,590540.5,aust1307,Austronesian,checked by Damian,,SkoglundNature2016,HumanOrigins_AutosomalSNP
 HumanOrigins_AutosomalSNP-208,Makrani,,26,64,makr1243,,Makrani,EURASIA,Pakistan,25,596262.0,indo1319,Indo-European,automatically assigned by Robert F,,PattersonGenetics2012,HumanOrigins_AutosomalSNP
-HumanOrigins_AutosomalSNP-209,Mala,,18.67,78.17,mala1466,,Malaryan,EURASIA,India,16,595960.5,drav1251,Dravidian,automatically assigned by Robert F,,LazaridisNature2014,HumanOrigins_AutosomalSNP
+HumanOrigins_AutosomalSNP-209,Mala,,18.67,78.17,telu1262,,Telugu,EURASIA,India,16,595960.5,drav1251,Dravidian,automatically assigned by Robert F,,LazaridisNature2014,HumanOrigins_AutosomalSNP
 HumanOrigins_AutosomalSNP-210,Malawi_Chewa,,-13.703473,33.597743,nyan1308,,Nyanja,AFRICA,Malawi,11,588303.0,atla1278,Atlantic-Congo,checked by Chiara,,SkoglundCell2017,HumanOrigins_AutosomalSNP
 HumanOrigins_AutosomalSNP-211,Malawi_Tumbuka,,-11.900632,33.598959,tumb1250,,Tumbuka,AFRICA,Malawi,10,587926.5,atla1278,Atlantic-Congo,checked by Chiara,,SkoglundCell2017,HumanOrigins_AutosomalSNP
 HumanOrigins_AutosomalSNP-212,Malawi_Yao,,-15.785624,35.008278,yaoo1241,,Yao,AFRICA,Malawi,9,587828.0,atla1278,Atlantic-Congo,checked by Chiara,,SkoglundCell2017,HumanOrigins_AutosomalSNP

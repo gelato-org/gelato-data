@@ -5,16 +5,19 @@
             "@language": "en"
         }
     ],
+    "dc:bibliographicCitation": "Barbieri et al. in press",
     "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#StructureDataset",
+    "dc:description": "A resource for multidisciplinary studies on human genetic and linguistic variation",
+    "dc:identifier": "https://gelato.clld.org",
     "dc:license": "https://creativecommons.org/licenses/by/4.0/",
     "dc:source": "sources.bib",
-    "dc:title": "Genes and Languages Together",
+    "dc:title": "GEnes and LAnguages TOgether",
     "dcat:accessURL": "https://github.com/gelato-org/gelato-data",
     "prov:wasDerivedFrom": [
         {
             "rdf:about": "https://github.com/gelato-org/gelato-data",
             "rdf:type": "prov:Entity",
-            "dc:created": "e8bda79",
+            "dc:created": "6edc215",
             "dc:title": "Repository"
         },
         {

@@ -1,8 +1,8 @@
 {
     "id": "gelato",
-    "title": "Genes and Languages Together",
-    "description": null,
+    "title": "GEnes and LAnguages TOgether",
+    "description": "A resource for multidisciplinary studies on human genetic and linguistic variation",
     "license": "CC-BY-4.0",
-    "url": null,
-    "citation": null
+    "url": "https://gelato.clld.org",
+    "citation": "Barbieri et al. in press"
 }
