@@ -544,10 +544,10 @@ family_distances %>%
   scale_size_manual(values = c(1,2))+
   theme(legend.position = "bottom", axis.text=element_text(size=7),strip.text = element_text(size = 12))+
   xlab("Geographic Distance - km") +
-  ylab("Linear FST") 
+  ylab(expression(Linearized~F["ST"])) 
 
-ggsave("Fig2_smoothregressionPlotwithLinear_highlightMismatches_2022_July.pdf", useDingbats=FALSE, height = 6, width = 10)
-# ggsave("Fig2_smoothregressionPlotwithLinear_highlightMismatches_2022.png",  height = 5, width = 10)
+ggsave("Fig2_smoothregressionPlotwithLinear_highlightMismatches_2022_October.pdf", useDingbats=FALSE, height = 6, width = 10)
+ ggsave("Fig2_smoothregressionPlotwithLinear_highlightMismatches_2022October.png",  height = 5, width = 10)
 
 
 
@@ -633,8 +633,8 @@ sxa<-a+
   scale_color_manual(values=c(blueNO,darkredYES))+
   theme(legend.position = "bottom", axis.text=element_text(size=7),strip.text = element_text(size = 12))+
   xlab("Geographic Distance - km") +
-  ylab("Linear FST") 
-
+  ylab(expression(Linearized~F["ST"])) 
+  
 ggsave("Fig2_smoothregressionPlot_Jackknife.pdf", useDingbats=FALSE, height = 5, width = 10)
 
 #**********************************************************
@@ -673,7 +673,7 @@ ggplot(family_distances,
   scale_size_manual(values = c(1,2))+
   theme(legend.position = "bottom", axis.text=element_text(size=7),strip.text = element_text(size = 12))+
   xlab("Geographic Distance - km") +
-  ylab("Linear FST")
+  ylab(expression(Linearized~F["ST"])) 
 
 # Fit the GAMs per family and condition:
 gams <- group_by(family_distances, Family, SameFamily) %>%
@@ -736,7 +736,7 @@ SXB<-ggplot(family_distances_trimmed,
   scale_size_manual(values = c(1,2))+
   theme(legend.position = "bottom", axis.text=element_text(size=7),strip.text = element_text(size = 12))+
   xlab("Geographic Distance - km") +
-  ylab("Linear FST")
+  ylab(expression(Linearized~F["ST"])) 
 
 
 #**********************************************************
@@ -748,12 +748,12 @@ patchwork<-sxa / SXB
 patchwork + plot_annotation(tag_levels = 'A')
 
 
-ggsave("FIG_SXX_jackknife_v3.pdf", height = 16, width = 17, useDingbats=FALSE)
+ggsave("FIG_S12_jackknife_v3.pdf", height = 16, width = 17, useDingbats=FALSE)
 
 
 
 # ***************************************************
-#### SUPPLEMENTARY FIGURES 
+#### OTHER SUPPLEMENTARY FIGURES 
 # ***************************************************
 # ***************************************************
 # ***************************************************
@@ -1607,6 +1607,8 @@ HUNG<- agg+ geom_label_repel( aes(GEOdist,FstLinear, color=family2,label=Pop2), 
   ggtitle("Hungarian")+
   scale_color_manual(values = colorispecial)+
   theme_light()+
+  xlab("Geographic distance (km)") +
+  ylab(expression(Linearized~F["ST"])) +
   labs(colour="Language Family")
 
 
@@ -1629,6 +1631,8 @@ MALTA<- agg+ geom_label_repel( aes(GEOdist,FstLinear, color=family2,label=Pop2),
   geom_point(aes(GEOdist,FstLinear, color=family2))+
   ggtitle("Maltese")+  theme_light()+
   scale_color_manual(values = colorispecial)+
+  xlab("Geographic distance (km)") +
+  ylab(expression(Linearized~F["ST"])) +
   labs(colour="Language Family")
 
 
@@ -1651,6 +1655,8 @@ ARMENIAN<- agg+ geom_label_repel( aes(GEOdist,FstLinear, color=family2,label=Pop
   geom_point(aes(GEOdist,FstLinear, color=family2))+
   ggtitle("Armenian")+
   scale_color_manual(values = colorispecial)+ theme_light()+
+  xlab("Geographic distance (km)") +
+  ylab(expression(Linearized~F["ST"])) +
   labs(colour="Language Family")
 
 #***************************************************
@@ -1671,6 +1677,8 @@ AZERBAJAN<- agg+ geom_label_repel( aes(GEOdist,FstLinear, color=family2,label=Po
   geom_point(aes(GEOdist,FstLinear, color=family2))+
   ggtitle("Azeri_Azerbajan")+
   scale_color_manual(values = colorispecial)+ theme_light()+
+  xlab("Geographic distance (km)") +
+  ylab(expression(Linearized~F["ST"])) +
   labs(colour="Language Family")
 
 
@@ -1692,6 +1700,8 @@ Kalmyk<- agg+ geom_label_repel( aes(GEOdist,FstLinear, color=family2,label=Pop2)
   geom_point(aes(GEOdist,FstLinear, color=family2))+
   ggtitle("Kalmyk")+
   scale_color_manual(values = colorispecial)+ theme_light()+
+  xlab("Geographic distance (km)") +
+  ylab(expression(Linearized~F["ST"])) +
   labs(colour="Language Family")
 
 
@@ -1702,10 +1712,10 @@ Kalmyk<- agg+ geom_label_repel( aes(GEOdist,FstLinear, color=family2,label=Pop2)
 #***************************************************
 library(ggpubr)
 
-ggarrange(HUNG, MALTA, ARMENIAN, AZERBAJAN + rremove("x.text"), 
+ggarrange(HUNG, MALTA, ARMENIAN, AZERBAJAN , 
           # labels = c("A", "B", "C", "D"),
           ncol = 2, nrow = 2)
-ggsave("combinedSinglePops_FstGeodist_supple_4targetpops_rightColor_rightGeo2022.pdf", useDingbats=FALSE, height = 10, width = 13)
+ggsave("Fig_S09_combinedSinglePops_FstGeodist.pdf", useDingbats=FALSE, height = 10, width = 13)
 
 
 
