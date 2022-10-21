@@ -9,7 +9,7 @@
     "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#StructureDataset",
     "dc:description": "A resource for multidisciplinary studies on human genetic and linguistic variation",
     "dc:identifier": "https://gelato.clld.org",
-    "dc:license": "https://creativecommons.org/licenses/by/4.0/",
+    "dc:license": "https://creativecommons.org/licenses/by-nc/4.0/",
     "dc:source": "sources.bib",
     "dc:title": "GEnes and LAnguages TOgether",
     "dcat:accessURL": "https://github.com/gelato-org/gelato-data",
@@ -17,7 +17,7 @@
         {
             "rdf:about": "https://github.com/gelato-org/gelato-data",
             "rdf:type": "prov:Entity",
-            "dc:created": "5689b92",
+            "dc:created": "947f1c7",
             "dc:title": "Repository"
         },
         {
