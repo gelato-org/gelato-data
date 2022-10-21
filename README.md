@@ -1,4 +1,7 @@
 # Welcome to the GeLaTo dataset
+
+[![CLDF validation](https://github.com/gelato-org/gelato-data/workflows/CLDF-validation/badge.svg)](https://github.com/gelato-org/gelato-data/actions?query=workflow%3ACLDF-validation)
+
 ## GEnes and LAnguages TOgether: a resource for multidisciplinary studies on human genetic and linguistic variation
 
 The GeLaTo dataset is a worldwide diversity panel of available population genetic samples matched with databases of linguistic diversity. Each genetic population is associated to the main language spoken by their people. The choice of genetic data corresponds to essential guidelines: maximum compatibility and standardization, modern high quality data, avoidance of ascertainment bias, availability for different regions of the world, and high resolution to capture recent events. The dataset provides elaborated summary statistics such as genetic diversity within a population, genetic proximity between pairs of populations, sharing of identical motifs, and demographic history reconstructions. 

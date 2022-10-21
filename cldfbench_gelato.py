@@ -8,7 +8,7 @@ from pycldf.sources import Sources
 from csvw import Datatype
 from csvw.dsv_dialects import Dialect
 
-from cldfbench.metadata import Metadata
+
 class Dataset(BaseDataset):
     dir = pathlib.Path(__file__).parent
     id = "gelato"
