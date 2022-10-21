@@ -37,7 +37,7 @@ Academic publications which deal with GeLaTo include:
 
 **202X**
 
-Barbieri, Blasi et al. 202X
+Barbieri, Blasi et al. 2022
 
 A global analysis of matches and mismatches between human genetic and linguistic histories.
 BibTeX
