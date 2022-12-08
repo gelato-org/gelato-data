@@ -1214,7 +1214,7 @@ ggsave("MapPairFSTPercentileDistribution_2022.pdf", useDingbats=FALSE, width = 1
 
 ##-------------------------------------
 # figure  area proportion of linguistically unrelated in close FSTs
-#  supplementary Fig S6B
+#  supplementary Fig S6C
 ##-------------------------------------
 
 
@@ -1298,7 +1298,7 @@ for (i in length(percentiles):1){
 # CONNECT MISMATCHES BETWEEN MAJOR FAMILIES
 # with a big circle
 
-##### FIGURE 1C  ****************************************
+##### FIGURE S6D  ****************************************
 
 perpopREDfamily<-perpopRED[which(perpopRED$glottolog.NAME %in% MainFamilies),]
 
@@ -1707,7 +1707,7 @@ Kalmyk<- agg+ geom_label_repel( aes(GEOdist,FstLinear, color=family2,label=Pop2)
 
 
 #***************************************************
-## combine 4 figures in one single populations, without Language Isolates
+## combine 4 figures in one single 
 # figure  S9
 #***************************************************
 library(ggpubr)
