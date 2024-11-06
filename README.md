@@ -31,3 +31,10 @@ Further information on the population genetics methods employed is available in 
 * Allowing geneticists to properly characterize the human history behind the molecular data, and give an accessible reference dataset for regional or worldwide comparisons.
 * Allowing linguists, historians and cultural anthropologists to integrate information on genealogical relatedness and demography, which can be robustly extrapolated from the genetic data.
 * Allowing scholars of various disciplines to approach questions of major relevance on human diversity in a true multidisciplinary perspective, and develop a more realistic understanding of the complex mechanisms behind human migration, contact and cultural transmission.
+
+### How to cite
+If you use this data, please cite
+
+Barbieri et al. 2022. A global analysis of matches and mismatches between human genetic and linguistic histories. PNAS. DOI: 10.1073/pnas.2122084119
+
+as well as the  [eleased version](https://github.com/gelato-org/gelato-data/releases) of the dataset.
