@@ -37,4 +37,4 @@ If you use this data, please cite
 
 Barbieri et al. 2022. A global analysis of matches and mismatches between human genetic and linguistic histories. PNAS. DOI: 10.1073/pnas.2122084119
 
-as well as the  [eleased version](https://github.com/gelato-org/gelato-data/releases) of the dataset.
+as well as the  [released version](https://github.com/gelato-org/gelato-data/releases) of the dataset.
